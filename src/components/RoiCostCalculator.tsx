@@ -83,7 +83,7 @@ export function RoiCostCalculator({ isOpen, onClose }: RoiCostCalculatorProps) {
               onChange={(e) => setRecordCount(parseInt(e.target.value, 10))}
               className="mt-2 w-full accent-[var(--color-brand-primary)]"
             />
-            <div className="mt-1 flex justify-between text-[10px] text-[var(--color-text-muted)] font-mono">
+            <div className="mt-1 flex justify-between text-xs text-[var(--color-text-muted)] font-mono">
               <span>5,000 Records</span>
               <span>15,000 (Target)</span>
               <span>25,000 Records</span>
@@ -99,7 +99,7 @@ export function RoiCostCalculator({ isOpen, onClose }: RoiCostCalculatorProps) {
                   <Users className="h-4 w-4" />
                   Manual Human Callers
                 </span>
-                <span className="font-mono text-[10px] text-rose-600 dark:text-rose-400 font-bold">
+                <span className="font-mono text-xs text-rose-600 dark:text-rose-400 font-bold">
                   $25.00 CAD / Hour
                 </span>
               </div>
@@ -107,7 +107,7 @@ export function RoiCostCalculator({ isOpen, onClose }: RoiCostCalculatorProps) {
                 <div className="text-2xl font-bold font-mono text-rose-700 dark:text-rose-400">
                   ${humanTotalCost.toLocaleString()} CAD
                 </div>
-                <div className="mt-2 space-y-1 text-[11px] text-[var(--color-text-secondary)]">
+                <div className="mt-2 space-y-1 text-xs text-[var(--color-text-secondary)]">
                   <div className="flex justify-between">
                     <span>Labor Hours Required:</span>
                     <strong className="font-mono">{humanHoursNeeded.toLocaleString()} hrs</strong>
@@ -131,7 +131,7 @@ export function RoiCostCalculator({ isOpen, onClose }: RoiCostCalculatorProps) {
                   <Bot className="h-4 w-4" />
                   VeriStudent AI Voice Agent
                 </span>
-                <span className="font-mono text-[10px] text-emerald-600 dark:text-emerald-400 font-bold">
+                <span className="font-mono text-xs text-emerald-600 dark:text-emerald-400 font-bold">
                   $0.42 CAD / Attempt
                 </span>
               </div>
@@ -139,7 +139,7 @@ export function RoiCostCalculator({ isOpen, onClose }: RoiCostCalculatorProps) {
                 <div className="text-2xl font-bold font-mono text-emerald-700 dark:text-emerald-400">
                   ${aiTotalCost.toLocaleString()} CAD
                 </div>
-                <div className="mt-2 space-y-1 text-[11px] text-[var(--color-text-secondary)]">
+                <div className="mt-2 space-y-1 text-xs text-[var(--color-text-secondary)]">
                   <div className="flex justify-between">
                     <span>Concurrency Capacity:</span>
                     <strong className="font-mono">Up to 50 Live Lines</strong>
@@ -172,7 +172,7 @@ export function RoiCostCalculator({ isOpen, onClose }: RoiCostCalculatorProps) {
                 <span className="text-xs font-bold text-emerald-800 dark:text-emerald-300 font-mono">
                   {savingsPct}% Budget Reduction
                 </span>
-                <p className="text-[10px] text-emerald-700 dark:text-emerald-400">
+                <p className="text-xs text-emerald-700 dark:text-emerald-400">
                   {humanHoursNeeded.toLocaleString()} human rep hours saved
                 </p>
               </div>
@@ -184,7 +184,7 @@ export function RoiCostCalculator({ isOpen, onClose }: RoiCostCalculatorProps) {
         <div className="mt-6 flex items-center justify-end border-t border-[var(--color-border-subtle)] pt-4">
           <button
             onClick={onClose}
-            className="rounded-lg bg-[var(--color-brand-primary)] px-4 py-2 text-xs font-semibold text-white hover:bg-[var(--color-brand-hover)] cursor-pointer"
+            className="rounded-lg bg-[var(--color-brand-primary)] px-4 py-2 text-xs font-semibold text-white hover:bg-[var(--color-brand-hover)] whitespace-nowrap shrink-0 cursor-pointer"
           >
             Got It, Close Calculator
           </button>

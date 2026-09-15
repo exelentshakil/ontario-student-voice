@@ -102,7 +102,7 @@ export function BatchDialerModal({
               <ShieldCheck className="h-4 w-4 text-emerald-600" />
               Ontario Business Hours Lock (CRTC Section 4)
             </div>
-            <p className="mt-1 text-[11px] leading-relaxed">
+            <p className="mt-1 text-xs leading-relaxed">
               Toronto Time: <strong>{compliance.currentTorontoTime}</strong>. Automated calling is strictly constrained to 09:00 - 20:00 EST Monday-Friday and 09:00 - 17:00 EST Saturdays. Sunday dials are rejected at carrier trunk level.
             </p>
           </div>
@@ -123,7 +123,7 @@ export function BatchDialerModal({
               onChange={(e) => setConcurrency(parseInt(e.target.value, 10))}
               className="mt-2 w-full accent-[var(--color-brand-primary)]"
             />
-            <div className="flex justify-between text-[10px] text-[var(--color-text-muted)] font-mono">
+            <div className="flex justify-between text-xs text-[var(--color-text-muted)] font-mono">
               <span>1 Line (Warm-up)</span>
               <span>25 Lines (Standard)</span>
               <span>50 Lines (Full Throttle)</span>
@@ -135,7 +135,7 @@ export function BatchDialerModal({
             <label className="flex items-center justify-between rounded-lg border border-[var(--color-border)] bg-[var(--color-panel-subtle)] p-3 cursor-pointer">
               <div>
                 <p className="font-semibold text-[var(--color-text-primary)]">Enforce Ontario Calling Hours</p>
-                <p className="text-[11px] text-[var(--color-text-muted)]">Automatically pause queues when local Ontario time is after 8:00 PM EST.</p>
+                <p className="text-xs text-[var(--color-text-muted)]">Automatically pause queues when local Ontario time is after 8:00 PM EST.</p>
               </div>
               <input
                 type="checkbox"
@@ -148,7 +148,7 @@ export function BatchDialerModal({
             <label className="flex items-center justify-between rounded-lg border border-[var(--color-border)] bg-[var(--color-panel-subtle)] p-3 cursor-pointer">
               <div>
                 <p className="font-semibold text-[var(--color-text-primary)]">National & Internal DNC Scrubbing</p>
-                <p className="text-[11px] text-[var(--color-text-muted)]">Check records against Canadian DNCL and permanent opt-out database.</p>
+                <p className="text-xs text-[var(--color-text-muted)]">Check records against Canadian DNCL and permanent opt-out database.</p>
               </div>
               <input
                 type="checkbox"
@@ -164,7 +164,7 @@ export function BatchDialerModal({
             <span className="font-semibold text-[var(--color-text-primary)] block mb-1">
               Unanswered / Voicemail Retry Logic
             </span>
-            <div className="grid grid-cols-2 gap-3 text-[11px] text-[var(--color-text-secondary)]">
+            <div className="grid grid-cols-2 gap-3 text-xs text-[var(--color-text-secondary)]">
               <div>
                 <span>Max Attempts:</span>
                 <p className="font-bold text-[var(--color-text-primary)] font-mono">3 Dials Per Record</p>

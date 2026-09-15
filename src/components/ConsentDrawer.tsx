@@ -89,7 +89,7 @@ export function ConsentDrawer({ student, isOpen, onClose }: ConsentDrawerProps) 
               <span className="font-semibold text-xs uppercase tracking-wider text-teal-700 dark:text-teal-300">
                 Official Regulatory Record
               </span>
-              <span className="flex items-center gap-1 rounded bg-teal-200/60 dark:bg-teal-900/60 px-2 py-0.5 text-[10px] font-mono font-bold">
+              <span className="flex items-center gap-1 rounded bg-teal-200/60 dark:bg-teal-900/60 px-2 py-0.5 text-xs font-mono font-bold">
                 <Lock className="h-3 w-3" />
                 VERIFIED &amp; STORED
               </span>
@@ -104,7 +104,7 @@ export function ConsentDrawer({ student, isOpen, onClose }: ConsentDrawerProps) 
 
           {/* Captured Spoken Quote */}
           <div>
-            <span className="font-semibold uppercase tracking-wider text-[var(--color-text-secondary)] text-[11px]">
+            <span className="font-semibold uppercase tracking-wider text-[var(--color-text-secondary)] text-xs">
               Verbatim Spoken Consent (Audio Transcript):
             </span>
             <div className="mt-1.5 rounded-lg border border-[var(--color-border)] bg-[var(--color-panel-subtle)] p-3 italic text-xs leading-relaxed text-[var(--color-text-primary)]">
@@ -115,25 +115,25 @@ export function ConsentDrawer({ student, isOpen, onClose }: ConsentDrawerProps) 
           {/* Metadata Grid */}
           <div className="grid grid-cols-2 gap-3 text-xs">
             <div className="rounded-lg border border-[var(--color-border)] bg-[var(--color-panel-subtle)] p-3">
-              <span className="text-[10px] uppercase font-semibold text-[var(--color-text-muted)] block">
+              <span className="text-xs uppercase font-semibold text-[var(--color-text-muted)] block">
                 Consent Timestamp
               </span>
               <p className="font-mono font-semibold text-[var(--color-text-primary)] mt-1">
                 {new Date(timestamp).toLocaleString("en-US", { timeZone: "America/Toronto" })} EST
               </p>
-              <p className="font-mono text-[10px] text-[var(--color-text-muted)] mt-0.5">
+              <p className="font-mono text-xs text-[var(--color-text-muted)] mt-0.5">
                 {timestamp}
               </p>
             </div>
 
             <div className="rounded-lg border border-[var(--color-border)] bg-[var(--color-panel-subtle)] p-3">
-              <span className="text-[10px] uppercase font-semibold text-[var(--color-text-muted)] block">
+              <span className="text-xs uppercase font-semibold text-[var(--color-text-muted)] block">
                 Destination College
               </span>
               <p className="font-semibold text-[var(--color-text-primary)] mt-1 truncate">
                 {college}
               </p>
-              <p className="text-[10px] text-emerald-600 dark:text-emerald-400 font-medium mt-0.5">
+              <p className="text-xs text-emerald-600 dark:text-emerald-400 font-medium mt-0.5">
                 Tuition Expectations Acknowledged
               </p>
             </div>
@@ -142,12 +142,12 @@ export function ConsentDrawer({ student, isOpen, onClose }: ConsentDrawerProps) 
           {/* SHA-256 Hash Box */}
           <div className="rounded-lg border border-[var(--color-border)] bg-[var(--color-panel-subtle)] p-3">
             <div className="flex items-center justify-between">
-              <span className="text-[10px] uppercase font-semibold text-[var(--color-text-muted)]">
+              <span className="text-xs uppercase font-semibold text-[var(--color-text-muted)]">
                 Cryptographic Integrity Hash (SHA-256):
               </span>
               <button
                 onClick={handleCopySha}
-                className="inline-flex items-center gap-1 text-[10px] font-mono text-[var(--color-brand-primary)] hover:underline cursor-pointer"
+                className="inline-flex items-center gap-1 text-xs font-mono text-[var(--color-brand-primary)] hover:underline cursor-pointer"
               >
                 <Copy className="h-3 w-3" />
                 Copy Hash
@@ -161,20 +161,20 @@ export function ConsentDrawer({ student, isOpen, onClose }: ConsentDrawerProps) 
 
         {/* Footer */}
         <div className="mt-6 flex items-center justify-between border-t border-[var(--color-border-subtle)] pt-4">
-          <span className="text-[11px] text-[var(--color-text-muted)]">
+          <span className="text-xs text-[var(--color-text-muted)]">
             Airtable ID: <strong className="font-mono">{student.airtableRecordId}</strong>
           </span>
           <div className="flex items-center gap-2">
             <button
               onClick={handleDownloadCertificate}
-              className="inline-flex items-center gap-1.5 rounded-lg border border-[var(--color-border)] bg-[var(--color-panel)] px-3 py-1.5 text-xs font-semibold text-[var(--color-text-secondary)] hover:bg-[var(--color-panel-subtle)] cursor-pointer"
+              className="inline-flex items-center gap-1.5 rounded-lg border whitespace-nowrap shrink-0 border-[var(--color-border)] bg-[var(--color-panel)] px-3 py-1.5 text-xs font-semibold text-[var(--color-text-secondary)] hover:bg-[var(--color-panel-subtle)] cursor-pointer"
             >
               <Download className="h-3.5 w-3.5" />
               Download Audit JSON
             </button>
             <button
               onClick={onClose}
-              className="rounded-lg bg-[var(--color-brand-primary)] px-4 py-1.5 text-xs font-semibold text-white hover:bg-[var(--color-brand-hover)] cursor-pointer"
+              className="rounded-lg bg-[var(--color-brand-primary)] px-4 py-1.5 text-xs whitespace-nowrap shrink-0 font-semibold text-white hover:bg-[var(--color-brand-hover)] cursor-pointer"
             >
               Close
             </button>

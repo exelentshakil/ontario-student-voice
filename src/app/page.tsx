@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { Header } from "@/components/Header";
+import { ReviewerTour } from "@/components/ReviewerTour";
 import { BentoKpiGrid } from "@/components/BentoKpiGrid";
 import { WorkflowCanvas } from "@/components/WorkflowCanvas";
 import { LeadQueueTable } from "@/components/LeadQueueTable";
@@ -107,6 +108,7 @@ export default function Home() {
                 <span className="font-semibold">{batchNotice}</span>
               </div>
               <button
+                type="button"
                 onClick={() => setBatchNotice(null)}
                 className="text-xs font-bold hover:underline cursor-pointer"
               >
@@ -135,30 +137,33 @@ export default function Home() {
             {/* Quick Segment Switcher */}
             <div className="flex items-center rounded-xl border border-[var(--color-border)] bg-[var(--color-panel)] p-1 shadow-sm shrink-0">
               <button
+                type="button"
                 onClick={() => setActiveSection("dashboard")}
-                className={`rounded-lg px-3 py-1.5 text-xs font-semibold transition-all cursor-pointer ${
+                className={`rounded-lg px-3 py-1.5 text-xs font-semibold whitespace-nowrap shrink-0 transition-all cursor-pointer ${
                   activeSection === "dashboard"
-                    ? "bg-[var(--color-brand-primary)] text-white shadow-sm"
+                    ? "bg-[var(--color-brand-primary)] text-white shadow-sm font-bold"
                     : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]"
                 }`}
               >
                 Workflow &amp; Architecture
               </button>
               <button
+                type="button"
                 onClick={() => setActiveSection("queue")}
-                className={`rounded-lg px-3 py-1.5 text-xs font-semibold transition-all cursor-pointer ${
+                className={`rounded-lg px-3 py-1.5 text-xs font-semibold whitespace-nowrap shrink-0 transition-all cursor-pointer ${
                   activeSection === "queue"
-                    ? "bg-[var(--color-brand-primary)] text-white shadow-sm"
+                    ? "bg-[var(--color-brand-primary)] text-white shadow-sm font-bold"
                     : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]"
                 }`}
               >
                 Airtable Database ({students.length})
               </button>
               <button
+                type="button"
                 onClick={() => setActiveSection("call")}
-                className={`rounded-lg px-3 py-1.5 text-xs font-semibold transition-all cursor-pointer ${
+                className={`rounded-lg px-3 py-1.5 text-xs font-semibold whitespace-nowrap shrink-0 transition-all cursor-pointer ${
                   activeSection === "call"
-                    ? "bg-[var(--color-brand-primary)] text-white shadow-sm"
+                    ? "bg-[var(--color-brand-primary)] text-white shadow-sm font-bold"
                     : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]"
                 }`}
               >
@@ -166,6 +171,19 @@ export default function Home() {
               </button>
             </div>
           </div>
+
+          {/* Interactive Client Reviewer Guided Tour (RFP Deliverables Walkthrough) */}
+          <ReviewerTour
+            onTestComplianceLock={() => setIsBatchModalOpen(true)}
+            onTestVoiceCall={() => {
+              setActiveStudentId("std_mis_092");
+              setActiveSection("call");
+            }}
+            onInspectConsent={() => {
+              setConsentStudent(students[0] || INITIAL_STUDENTS[0]);
+            }}
+            onExportBlueprints={() => setIsBlueprintsModalOpen(true)}
+          />
 
           {/* Bento KPI Performance Grid */}
           <BentoKpiGrid metrics={metrics} />
@@ -194,16 +212,18 @@ export default function Home() {
 
                   <div className="flex flex-wrap items-center gap-3 shrink-0">
                     <button
+                      type="button"
                       onClick={() => setActiveSection("call")}
-                      className="inline-flex items-center gap-2 rounded-xl bg-[var(--color-brand-primary)] px-5 py-3 text-xs sm:text-sm font-semibold text-white shadow-md hover:bg-[var(--color-brand-hover)] transition-all cursor-pointer"
+                      className="inline-flex items-center gap-2 rounded-xl bg-[var(--color-brand-primary)] px-5 py-3 text-xs sm:text-sm font-semibold text-white shadow-md hover:bg-[var(--color-brand-hover)] transition-all cursor-pointer whitespace-nowrap shrink-0"
                     >
                       <PhoneCall className="h-4 w-4" />
                       Launch Call Simulator
                       <ArrowRight className="h-4 w-4" />
                     </button>
                     <button
+                      type="button"
                       onClick={() => setActiveSection("queue")}
-                      className="inline-flex items-center gap-2 rounded-xl border border-[var(--color-border)] bg-[var(--color-panel-subtle)] px-4 py-3 text-xs sm:text-sm font-semibold text-[var(--color-text-secondary)] hover:bg-[var(--color-panel)] transition-all cursor-pointer"
+                      className="inline-flex items-center gap-2 rounded-xl border border-[var(--color-border)] bg-[var(--color-panel-subtle)] px-4 py-3 text-xs sm:text-sm font-semibold text-[var(--color-text-secondary)] hover:bg-[var(--color-panel)] transition-all cursor-pointer whitespace-nowrap shrink-0"
                     >
                       <Layers className="h-4 w-4" />
                       Inspect Airtable Records
@@ -219,8 +239,9 @@ export default function Home() {
                     Recent Verification Activity &amp; Live Queue
                   </h3>
                   <button
+                    type="button"
                     onClick={() => setActiveSection("queue")}
-                    className="text-xs font-semibold text-[var(--color-brand-primary)] hover:underline cursor-pointer"
+                    className="text-xs font-semibold text-[var(--color-brand-primary)] hover:underline cursor-pointer whitespace-nowrap"
                   >
                     View All {students.length} Records →
                   </button>
@@ -247,8 +268,9 @@ export default function Home() {
                 </div>
                 <div className="flex items-center gap-2">
                   <button
+                    type="button"
                     onClick={() => setIsBatchModalOpen(true)}
-                    className="inline-flex items-center gap-1.5 rounded-lg bg-[var(--color-brand-primary)] px-3 py-1.5 text-xs font-semibold text-white shadow-sm hover:bg-[var(--color-brand-hover)] cursor-pointer"
+                    className="inline-flex items-center gap-1.5 rounded-lg bg-[var(--color-brand-primary)] px-3 py-1.5 text-xs font-semibold text-white shadow-sm hover:bg-[var(--color-brand-hover)] transition-all whitespace-nowrap shrink-0 cursor-pointer"
                   >
                     <Activity className="h-3.5 w-3.5" />
                     Launch Batch Campaign
@@ -282,8 +304,9 @@ export default function Home() {
                 </div>
                 <div className="flex items-center gap-2">
                   <button
+                    type="button"
                     onClick={() => setActiveSection("queue")}
-                    className="rounded-lg border border-[var(--color-border)] bg-[var(--color-panel-subtle)] px-3 py-1.5 text-xs font-semibold text-[var(--color-text-secondary)] hover:bg-[var(--color-panel)] cursor-pointer"
+                    className="rounded-lg border border-[var(--color-border)] bg-[var(--color-panel-subtle)] px-3 py-1.5 text-xs font-semibold text-[var(--color-text-secondary)] hover:bg-[var(--color-panel)] transition-colors whitespace-nowrap shrink-0 cursor-pointer"
                   >
                     Back to Queue
                   </button>

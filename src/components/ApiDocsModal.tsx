@@ -163,7 +163,7 @@ Host: ontario-student-voice.vercel.app`,
                 <h3 className="text-base font-bold text-[var(--color-text-primary)]">
                   API &amp; Webhook Integration Specs
                 </h3>
-                <span className="rounded bg-indigo-100 dark:bg-indigo-950 px-2 py-0.5 text-[10px] font-mono font-bold text-indigo-700 dark:text-indigo-300">
+                <span className="rounded bg-indigo-100 dark:bg-indigo-950 px-2 py-0.5 text-xs font-mono font-bold text-indigo-700 dark:text-indigo-300">
                   OpenAPI 3.1
                 </span>
               </div>
@@ -186,14 +186,14 @@ Host: ontario-student-voice.vercel.app`,
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`flex items-center gap-2 border-b-2 px-4 py-2.5 text-xs font-semibold whitespace-nowrap cursor-pointer transition-colors ${
+              className={`flex items-center gap-2 border-b-2 px-4 py-2.5 text-xs font-semibold whitespace-nowrap shrink-0 cursor-pointer transition-colors ${
                 activeTab === tab
                   ? "border-[var(--color-brand-primary)] text-[var(--color-brand-primary)] bg-[var(--color-panel)] rounded-t-lg"
                   : "border-transparent text-[var(--color-text-muted)] hover:text-[var(--color-text-primary)]"
               }`}
             >
               <span
-                className={`rounded px-1.5 py-0.5 text-[10px] font-mono font-bold ${
+                className={`rounded px-1.5 py-0.5 text-xs font-mono font-bold ${
                   endpoints[tab].method === "POST"
                     ? "bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300"
                     : "bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-300"
@@ -236,7 +236,7 @@ Host: ontario-student-voice.vercel.app`,
               </span>
               <button
                 onClick={() => handleCopy(current.requestExample, `req_${activeTab}`)}
-                className="flex items-center gap-1 text-[11px] font-semibold text-[var(--color-brand-primary)] hover:underline cursor-pointer"
+                className="flex items-center gap-1 text-xs font-semibold text-[var(--color-brand-primary)] hover:underline cursor-pointer"
               >
                 {copiedCode === `req_${activeTab}` ? (
                   <>
@@ -264,7 +264,7 @@ Host: ontario-student-voice.vercel.app`,
               </span>
               <button
                 onClick={() => handleCopy(current.responseExample, `res_${activeTab}`)}
-                className="flex items-center gap-1 text-[11px] font-semibold text-[var(--color-brand-primary)] hover:underline cursor-pointer"
+                className="flex items-center gap-1 text-xs font-semibold text-[var(--color-brand-primary)] hover:underline cursor-pointer"
               >
                 {copiedCode === `res_${activeTab}` ? (
                   <>

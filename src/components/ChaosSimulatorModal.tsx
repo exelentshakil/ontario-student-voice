@@ -174,7 +174,7 @@ export function ChaosSimulatorModal({ isOpen, onClose }: ChaosSimulatorModalProp
                 <Server className="h-4 w-4 text-indigo-500" />
                 Simulate OpenAI 429 Outage
               </span>
-              <p className="text-[11px] text-[var(--color-text-muted)] mt-1">
+              <p className="text-xs text-[var(--color-text-muted)] mt-1">
                 Fails over to Gemini 2.0 Flash in &lt;200ms
               </p>
             </div>
@@ -191,7 +191,7 @@ export function ChaosSimulatorModal({ isOpen, onClose }: ChaosSimulatorModalProp
                 <Radio className="h-4 w-4 text-rose-500" />
                 Simulate Twilio Carrier Drop
               </span>
-              <p className="text-[11px] text-[var(--color-text-muted)] mt-1">
+              <p className="text-xs text-[var(--color-text-muted)] mt-1">
                 Hot-swaps to secondary Telnyx SIP trunk
               </p>
             </div>
@@ -205,7 +205,7 @@ export function ChaosSimulatorModal({ isOpen, onClose }: ChaosSimulatorModalProp
             <span className="text-xs font-bold text-[var(--color-text-primary)] font-mono">
               Live Telemetry &amp; Circuit Breaker Stream
             </span>
-            <span className="flex items-center gap-1 text-[10px] font-mono text-emerald-600 dark:text-emerald-400">
+            <span className="flex items-center gap-1 text-xs font-mono text-emerald-600 dark:text-emerald-400">
               <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
               ACTIVE MONITORING
             </span>
@@ -215,7 +215,7 @@ export function ChaosSimulatorModal({ isOpen, onClose }: ChaosSimulatorModalProp
             {logs.map((log, i) => (
               <div
                 key={i}
-                className={`rounded border p-2 text-[11px] leading-relaxed ${
+                className={`rounded border p-2 text-xs leading-relaxed ${
                   log.type === "DISRUPTION"
                     ? "border-rose-200 bg-rose-50/60 dark:border-rose-900/60 dark:bg-rose-950/40 text-rose-800 dark:text-rose-300"
                     : log.type === "RECOVERY"
@@ -225,7 +225,7 @@ export function ChaosSimulatorModal({ isOpen, onClose }: ChaosSimulatorModalProp
               >
                 <div className="flex items-center justify-between font-bold">
                   <span>[{log.timestamp}] {log.source}</span>
-                  <span className="text-[10px]">{log.latencyMs}ms</span>
+                  <span className="text-xs">{log.latencyMs}ms</span>
                 </div>
                 <p className="mt-0.5">{log.message}</p>
               </div>

@@ -98,7 +98,7 @@ export function LeadQueueTable({
             }`}
           >
             <span>{tab.label}</span>
-            <span className="rounded bg-[var(--color-panel)] px-1.5 py-0.2 text-[10px] font-mono opacity-80">
+            <span className="rounded bg-[var(--color-panel)] px-1.5 py-0.2 text-xs font-mono opacity-80">
               {tab.count}
             </span>
           </button>
@@ -131,8 +131,8 @@ export function LeadQueueTable({
                   {/* 1. Student & Contact */}
                   <td className="px-4 py-3">
                     <div className="font-semibold text-[var(--color-text-primary)]">{s.fullName}</div>
-                    <div className="font-mono text-[var(--color-text-muted)] text-[11px]">{s.phone}</div>
-                    <div className="text-[11px] text-[var(--color-text-muted)] truncate">{s.email}</div>
+                    <div className="font-mono text-[var(--color-text-muted)] text-xs">{s.phone}</div>
+                    <div className="text-xs text-[var(--color-text-muted)] truncate">{s.email}</div>
                   </td>
 
                   {/* 2. Program & City */}
@@ -140,7 +140,7 @@ export function LeadQueueTable({
                     <div className="font-medium text-[var(--color-text-primary)] truncate" title={s.originalProgramInterest}>
                       {s.originalProgramInterest}
                     </div>
-                    <div className="text-[11px] text-[var(--color-text-secondary)]">
+                    <div className="text-xs text-[var(--color-text-secondary)]">
                       {s.city}, ON
                     </div>
                   </td>
@@ -148,11 +148,11 @@ export function LeadQueueTable({
                   {/* 3. Stale Age & Source */}
                   <td className="px-4 py-3">
                     <div className="flex items-center gap-1.5">
-                      <span className="inline-block rounded bg-amber-100 text-amber-800 dark:bg-amber-950/60 dark:text-amber-300 px-1.5 py-0.2 text-[10px] font-mono font-bold">
+                      <span className="inline-block rounded bg-amber-100 text-amber-800 dark:bg-amber-950/60 dark:text-amber-300 px-1.5 py-0.2 text-xs font-mono font-bold">
                         {s.staleDays}d Stale
                       </span>
                     </div>
-                    <div className="text-[11px] text-[var(--color-text-muted)] truncate mt-0.5" title={s.leadSource}>
+                    <div className="text-xs text-[var(--color-text-muted)] truncate mt-0.5" title={s.leadSource}>
                       {s.leadSource}
                     </div>
                   </td>
@@ -178,7 +178,7 @@ export function LeadQueueTable({
                       {s.verificationStatus}
                     </span>
                     {s.verifiedDetails?.transferOutcome && (
-                      <div className="text-[10px] font-mono text-[var(--color-text-muted)] mt-0.5">
+                      <div className="text-xs font-mono text-[var(--color-text-muted)] mt-0.5">
                         {s.verifiedDetails.transferOutcome}
                       </div>
                     )}
@@ -195,7 +195,7 @@ export function LeadQueueTable({
                         <span className="font-semibold">Logged</span>
                       </button>
                     ) : (
-                      <span className="text-[var(--color-text-muted)] text-[11px] font-mono">
+                      <span className="text-[var(--color-text-muted)] text-xs font-mono">
                         N/A
                       </span>
                     )}

@@ -147,7 +147,7 @@ export function Footer() {
               Ontario (America/Toronto) Synchronized
             </span>
           </div>
-          <div className="font-mono text-[11px]">
+          <div className="font-mono text-xs">
             Build: v1.4.2-prod • Next.js 15.5.4 App Router
           </div>
         </div>
@@ -162,7 +162,7 @@ export function Footer() {
               <p className="font-semibold text-[var(--color-text-primary)]">
                 BarakahSoft LLC
               </p>
-              <p className="text-[11px]">
+              <p className="text-xs">
                 Architected by Shakil Ahmed · Principal Systems Architect (12+ Yrs Exp, former Lead Engineer at Legiit)
               </p>
             </div>
@@ -172,7 +172,7 @@ export function Footer() {
             <p className="font-medium text-[var(--color-text-secondary)]">
               Ontario Career College Student Lead Verification Platform
             </p>
-            <p className="text-[11px] text-[var(--color-text-muted)]">
+            <p className="text-xs text-[var(--color-text-muted)]">
               Production-grade voice automation engineered for Canadian domestic student pipelines.
             </p>
           </div>
