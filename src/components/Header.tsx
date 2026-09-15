@@ -51,9 +51,9 @@ export function Header({
   return (
     <header className="sticky top-0 z-40 border-b border-[var(--color-border)] bg-[var(--color-panel)]/95 backdrop-blur-md">
       {/* Top Banner: Ontario CRTC Compliance Status */}
-      <div className="border-b border-[var(--color-border-subtle)] bg-[var(--color-panel-subtle)] px-4 py-1.5 text-xs text-[var(--color-text-secondary)]">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-2 px-0 sm:px-2">
-          <div className="flex items-center gap-2 overflow-x-auto whitespace-nowrap py-0.5">
+      <div className="border-b border-[var(--color-border-subtle)] bg-[var(--color-panel-subtle)] px-4 py-1.5 text-xs text-[var(--color-text-secondary)] w-full max-w-full overflow-hidden">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-2 px-0 sm:px-2 w-full max-w-full overflow-hidden">
+          <div className="flex items-center gap-2 overflow-x-auto whitespace-nowrap py-0.5 scrollbar-none max-w-full">
             <span className="inline-flex items-center gap-1.5 font-semibold text-[var(--color-text-primary)]">
               <ShieldCheck className="h-3.5 w-3.5 text-[var(--color-accent-emerald)]" />
               CRTC Compliance Lock:
@@ -105,7 +105,7 @@ export function Header({
                 <span className="text-base font-bold tracking-tight text-[var(--color-text-primary)] sm:text-lg">
                   VeriStudent AI
                 </span>
-                <span className="rounded-full bg-[var(--color-brand-subtle)] px-2 py-0.5 text-xs font-semibold text-[var(--color-brand-primary)] whitespace-nowrap shrink-0">
+                <span className="hidden sm:inline-flex rounded-full bg-[var(--color-brand-subtle)] px-2 py-0.5 text-xs font-semibold text-[var(--color-brand-primary)] whitespace-nowrap shrink-0">
                   Ontario Colleges
                 </span>
               </div>
@@ -153,10 +153,10 @@ export function Header({
           <div className="flex items-center gap-2">
             <button
               onClick={onOpenBatchModal}
-              className="inline-flex items-center gap-1.5 rounded-lg bg-[var(--color-brand-primary)] px-3 py-2 text-xs font-semibold text-white shadow-sm hover:bg-[var(--color-brand-hover)] transition-all whitespace-nowrap shrink-0 cursor-pointer"
+              className="inline-flex items-center gap-1.5 rounded-lg bg-[var(--color-brand-primary)] px-2.5 sm:px-3 py-2 text-xs font-semibold text-white shadow-sm hover:bg-[var(--color-brand-hover)] transition-all whitespace-nowrap shrink-0 cursor-pointer"
             >
-              <Activity className="h-3.5 w-3.5" />
-              Batch Dial
+              <Activity className="h-3.5 w-3.5 shrink-0" />
+              <span>Batch Dial</span>
             </button>
 
             <button

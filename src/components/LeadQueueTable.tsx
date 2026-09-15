@@ -22,6 +22,15 @@ interface LeadQueueTableProps {
   onOpenConsentModal: (student: StudentRecord) => void;
 }
 
+const STATUS_SHORT_LABELS: Record<string, string> = {
+  "Verified & Interested": "Verified",
+  "Pending Dial": "Pending",
+  "Not Interested / Closed": "Closed",
+  "Invalid / Disconnected": "Invalid",
+  "Wrong Person / Reassigned": "Reassigned",
+  "DNC Opt-Out (Permanent)": "DNC Opt-Out",
+};
+
 export function LeadQueueTable({
   students,
   onSelectStudentForCall,
@@ -175,7 +184,7 @@ export function LeadQueueTable({
                       {s.verificationStatus === "Verified & Interested" && <CheckCircle2 className="h-3 w-3" />}
                       {s.verificationStatus === "DNC Opt-Out (Permanent)" && <AlertOctagon className="h-3 w-3" />}
                       {s.verificationStatus === "Invalid / Disconnected" && <PhoneOff className="h-3 w-3" />}
-                      {s.verificationStatus}
+                      {STATUS_SHORT_LABELS[s.verificationStatus] || s.verificationStatus}
                     </span>
                     {s.verifiedDetails?.transferOutcome && (
                       <div className="text-xs font-mono text-[var(--color-text-muted)] mt-0.5">

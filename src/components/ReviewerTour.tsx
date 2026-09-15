@@ -46,7 +46,7 @@ export function ReviewerTour({
       badgeColor: "bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-950/60 dark:text-emerald-300 dark:border-emerald-900",
       icon: ShieldCheck,
       description: "Hardware & software clock enforcing Mon–Sat 09:00–20:00 EST and Sunday blackout.",
-      actionLabel: "Test Compliance Lock",
+      actionLabel: "Test Lock",
       action: () => markStepDone(1, onTestComplianceLock),
     },
     {
@@ -57,7 +57,7 @@ export function ReviewerTour({
       badgeColor: "bg-indigo-50 text-indigo-700 border-indigo-200 dark:bg-indigo-950/60 dark:text-indigo-300 dark:border-indigo-900",
       icon: PhoneCall,
       description: "5-second AI disclosure, identity confirmation, and tuition diploma reality filter.",
-      actionLabel: "Launch Voice Simulator",
+      actionLabel: "Test Voice AI",
       action: () => markStepDone(2, onTestVoiceCall),
     },
     {
@@ -68,7 +68,7 @@ export function ReviewerTour({
       badgeColor: "bg-teal-50 text-teal-700 border-teal-200 dark:bg-teal-950/60 dark:text-teal-300 dark:border-teal-900",
       icon: Lock,
       description: "Verbatim spoken authorization with ISO timestamp and cryptographic audit hash.",
-      actionLabel: "View Consent Audit",
+      actionLabel: "Audit Consent",
       action: () => markStepDone(3, onInspectConsent),
     },
     {
@@ -79,7 +79,7 @@ export function ReviewerTour({
       badgeColor: "bg-purple-50 text-purple-700 border-purple-200 dark:bg-purple-950/60 dark:text-purple-300 dark:border-purple-900",
       icon: Download,
       description: "Production n8n workflow JSON, Vapi assistant spec, and Twilio SIP scripts.",
-      actionLabel: "Export Blueprints",
+      actionLabel: "Blueprints",
       action: () => markStepDone(4, onExportBlueprints),
     },
   ];
@@ -199,7 +199,7 @@ export function ReviewerTour({
                         : "bg-[var(--color-brand-primary)] text-white hover:bg-[var(--color-brand-hover)]"
                     }`}
                   >
-                    <span>{isDone ? `Re-Test Step ${step.number}` : step.actionLabel}</span>
+                    <span>{isDone ? `Re-Test ${step.number}` : step.actionLabel}</span>
                     <ArrowRight className="h-3.5 w-3.5" />
                   </button>
                 </div>

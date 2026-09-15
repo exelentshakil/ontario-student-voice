@@ -36,7 +36,7 @@ interface TabMeta {
 const TAB_CONFIGS: TabMeta[] = [
   {
     key: "n8n",
-    label: "n8n Workflow JSON",
+    label: "n8n Workflow",
     formatBadge: "JSON",
     filename: "ontario_voice_n8n_workflow.json",
     targetStack: "n8n Self-Hosted / Cloud Automation",
@@ -46,7 +46,7 @@ const TAB_CONFIGS: TabMeta[] = [
   },
   {
     key: "vapi",
-    label: "Vapi Assistant Spec",
+    label: "Vapi Assistant",
     formatBadge: "SPEC",
     filename: "vapi_assistant_spec.json",
     targetStack: "Vapi Voice AI Orchestrator",
@@ -56,7 +56,7 @@ const TAB_CONFIGS: TabMeta[] = [
   },
   {
     key: "twilio",
-    label: "Twilio SIP Script",
+    label: "Twilio SIP",
     formatBadge: "BASH",
     filename: "twilio_sip_setup.sh",
     targetStack: "Twilio Elastic SIP Trunk (Toronto POP)",
@@ -66,7 +66,7 @@ const TAB_CONFIGS: TabMeta[] = [
   },
   {
     key: "airtable",
-    label: "Airtable Schema",
+    label: "Airtable DB",
     formatBadge: "SCHEMA",
     filename: "airtable_schema_spec.json",
     targetStack: "Airtable REST API",
@@ -350,7 +350,7 @@ export function BlueprintExporter({ isOpen, onClose }: BlueprintExporterProps) {
               className="inline-flex items-center gap-1.5 rounded-lg bg-[var(--color-brand-primary)] px-3.5 py-1.5 text-xs font-semibold text-white hover:bg-[var(--color-brand-hover)] transition-all whitespace-nowrap shrink-0 cursor-pointer shadow-sm"
             >
               <Download className="h-3.5 w-3.5 shrink-0" />
-              <span className="whitespace-nowrap">Download File</span>
+              <span className="whitespace-nowrap">Download</span>
             </button>
           </div>
         </div>

@@ -135,7 +135,7 @@ export default function Home() {
             </div>
 
             {/* Quick Segment Switcher */}
-            <div className="flex items-center rounded-xl border border-[var(--color-border)] bg-[var(--color-panel)] p-1 shadow-sm shrink-0">
+            <div className="flex items-center rounded-xl border border-[var(--color-border)] bg-[var(--color-panel)] p-1 shadow-sm max-w-full overflow-x-auto scrollbar-none shrink-0">
               <button
                 type="button"
                 onClick={() => setActiveSection("dashboard")}
@@ -145,7 +145,7 @@ export default function Home() {
                     : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]"
                 }`}
               >
-                Workflow &amp; Architecture
+                Pipeline
               </button>
               <button
                 type="button"
@@ -156,7 +156,7 @@ export default function Home() {
                     : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]"
                 }`}
               >
-                Airtable Database ({students.length})
+                Queue ({students.length})
               </button>
               <button
                 type="button"
@@ -167,7 +167,7 @@ export default function Home() {
                     : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]"
                 }`}
               >
-                Live Voice Simulator
+                Simulator
               </button>
             </div>
           </div>
@@ -217,7 +217,7 @@ export default function Home() {
                       className="inline-flex items-center gap-2 rounded-xl bg-[var(--color-brand-primary)] px-5 py-3 text-xs sm:text-sm font-semibold text-white shadow-md hover:bg-[var(--color-brand-hover)] transition-all cursor-pointer whitespace-nowrap shrink-0"
                     >
                       <PhoneCall className="h-4 w-4" />
-                      Launch Call Simulator
+                      Simulator
                       <ArrowRight className="h-4 w-4" />
                     </button>
                     <button
@@ -226,7 +226,7 @@ export default function Home() {
                       className="inline-flex items-center gap-2 rounded-xl border border-[var(--color-border)] bg-[var(--color-panel-subtle)] px-4 py-3 text-xs sm:text-sm font-semibold text-[var(--color-text-secondary)] hover:bg-[var(--color-panel)] transition-all cursor-pointer whitespace-nowrap shrink-0"
                     >
                       <Layers className="h-4 w-4" />
-                      Inspect Airtable Records
+                      View Queue
                     </button>
                   </div>
                 </div>
@@ -273,7 +273,7 @@ export default function Home() {
                     className="inline-flex items-center gap-1.5 rounded-lg bg-[var(--color-brand-primary)] px-3 py-1.5 text-xs font-semibold text-white shadow-sm hover:bg-[var(--color-brand-hover)] transition-all whitespace-nowrap shrink-0 cursor-pointer"
                   >
                     <Activity className="h-3.5 w-3.5" />
-                    Launch Batch Campaign
+                    Batch Dial
                   </button>
                 </div>
               </div>
