@@ -58,11 +58,12 @@ export function Header({
               <ShieldCheck className="h-3.5 w-3.5 text-[var(--color-accent-emerald)]" />
               CRTC Compliance Lock:
             </span>
-            <span className="font-mono text-[var(--color-text-muted)]">
-              {complianceState.currentTorontoTime}
+            <span className="font-mono text-[var(--color-text-muted)]" suppressHydrationWarning>
+              {mounted ? complianceState.currentTorontoTime : "--:--:-- EST"}
             </span>
             <span className="text-[var(--color-border)]">•</span>
             <span
+              suppressHydrationWarning
               className={`inline-flex items-center gap-1 rounded px-1.5 py-0.5 text-xs font-semibold ${
                 complianceState.isWithinBusinessHours
                   ? "bg-emerald-100 text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-300"
