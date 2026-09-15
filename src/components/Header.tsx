@@ -71,9 +71,7 @@ export function Header({
               }`}
             >
               <Clock className="h-3 w-3 shrink-0" />
-              {complianceState.isWithinBusinessHours
-                ? "CRTC Window Open (09:00–20:00 EST)"
-                : "CRTC Window Paused (Rules Lock)"}
+              {complianceState.isWithinBusinessHours ? "CRTC: Open" : "CRTC: Paused"}
             </span>
           </div>
 
@@ -85,7 +83,7 @@ export function Header({
             <span className="text-[var(--color-border)]">•</span>
             <button
               onClick={onOpenChaosModal}
-              className="inline-flex items-center gap-1 text-[var(--color-text-muted)] hover:text-[var(--color-accent-rose)] transition-colors cursor-pointer"
+              className="inline-flex items-center gap-1 text-[var(--color-text-muted)] hover:text-[var(--color-accent-rose)] transition-colors cursor-pointer whitespace-nowrap shrink-0"
             >
               <Flame className="h-3.5 w-3.5 text-rose-500" />
               Chaos Test
@@ -107,8 +105,8 @@ export function Header({
                 <span className="text-base font-bold tracking-tight text-[var(--color-text-primary)] sm:text-lg">
                   VeriStudent AI
                 </span>
-                <span className="rounded-full bg-[var(--color-brand-subtle)] px-2 py-0.5 text-xs font-semibold text-[var(--color-brand-primary)]">
-                  Ontario Carrier Colleges
+                <span className="rounded-full bg-[var(--color-brand-subtle)] px-2 py-0.5 text-xs font-semibold text-[var(--color-brand-primary)] whitespace-nowrap shrink-0">
+                  Ontario Colleges
                 </span>
               </div>
               <p className="hidden text-xs text-[var(--color-text-muted)] sm:block">
@@ -118,36 +116,36 @@ export function Header({
           </div>
 
           {/* Navigation Tabs */}
-          <nav className="hidden items-center gap-1 md:flex">
+          <nav className="hidden items-center gap-1 xl:flex">
             <button
               onClick={() => setActiveSection("dashboard")}
-              className={`rounded-lg px-3 py-2 text-xs font-semibold transition-colors ${
+              className={`rounded-lg px-3 py-1.5 text-xs font-semibold whitespace-nowrap shrink-0 transition-colors cursor-pointer ${
                 activeSection === "dashboard"
                   ? "bg-[var(--color-panel-subtle)] text-[var(--color-brand-primary)] border border-[var(--color-border)]"
                   : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-panel-subtle)]"
               }`}
             >
-              Pipeline Cockpit
+              Pipeline
             </button>
             <button
               onClick={() => setActiveSection("queue")}
-              className={`rounded-lg px-3 py-2 text-xs font-semibold transition-colors ${
+              className={`rounded-lg px-3 py-1.5 text-xs font-semibold whitespace-nowrap shrink-0 transition-colors cursor-pointer ${
                 activeSection === "queue"
                   ? "bg-[var(--color-panel-subtle)] text-[var(--color-brand-primary)] border border-[var(--color-border)]"
                   : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-panel-subtle)]"
               }`}
             >
-              Airtable Student Queue
+              Queue (12)
             </button>
             <button
               onClick={() => setActiveSection("call")}
-              className={`rounded-lg px-3 py-2 text-xs font-semibold transition-colors ${
+              className={`rounded-lg px-3 py-1.5 text-xs font-semibold whitespace-nowrap shrink-0 transition-colors cursor-pointer ${
                 activeSection === "call"
                   ? "bg-[var(--color-panel-subtle)] text-[var(--color-brand-primary)] border border-[var(--color-border)]"
                   : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-panel-subtle)]"
               }`}
             >
-              Live Call Simulator
+              Simulator
             </button>
           </nav>
 
@@ -158,20 +156,20 @@ export function Header({
               className="inline-flex items-center gap-1.5 rounded-lg bg-[var(--color-brand-primary)] px-3 py-2 text-xs font-semibold text-white shadow-sm hover:bg-[var(--color-brand-hover)] transition-all whitespace-nowrap shrink-0 cursor-pointer"
             >
               <Activity className="h-3.5 w-3.5" />
-              Batch Campaign
+              Batch Dial
             </button>
 
             <button
               onClick={onOpenRoiModal}
-              className="hidden rounded-lg border border-[var(--color-border)] bg-[var(--color-panel)] px-2.5 py-2 text-xs font-semibold text-[var(--color-text-secondary)] hover:bg-[var(--color-panel-subtle)] sm:inline-flex items-center gap-1.5 whitespace-nowrap shrink-0 cursor-pointer"
+              className="hidden rounded-lg border border-[var(--color-border)] bg-[var(--color-panel)] px-2.5 py-2 text-xs font-semibold text-[var(--color-text-secondary)] hover:bg-[var(--color-panel-subtle)] 2xl:inline-flex items-center gap-1.5 whitespace-nowrap shrink-0 cursor-pointer"
             >
               <Calculator className="h-3.5 w-3.5 text-amber-500" />
-              ROI Model
+              ROI
             </button>
 
             <button
               onClick={onOpenBlueprintsModal}
-              className="hidden rounded-lg border border-[var(--color-border)] bg-[var(--color-panel)] px-2.5 py-2 text-xs font-semibold text-[var(--color-text-secondary)] hover:bg-[var(--color-panel-subtle)] md:inline-flex items-center gap-1.5 whitespace-nowrap shrink-0 cursor-pointer"
+              className="hidden rounded-lg border border-[var(--color-border)] bg-[var(--color-panel)] px-2.5 py-2 text-xs font-semibold text-[var(--color-text-secondary)] hover:bg-[var(--color-panel-subtle)] xl:inline-flex items-center gap-1.5 whitespace-nowrap shrink-0 cursor-pointer"
             >
               <Download className="h-3.5 w-3.5 text-emerald-500" />
               Blueprints

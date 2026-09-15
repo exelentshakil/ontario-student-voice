@@ -98,8 +98,8 @@ export default function Home() {
       />
 
       {/* Main Content Workspace */}
-      <main className="flex-1 py-6 sm:py-8">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-8">
+      <main className="flex-1 py-6 sm:py-8 w-full max-w-full min-w-0 overflow-x-hidden">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-8 w-full max-w-full min-w-0">
           {/* Real-time Notification Banner */}
           {batchNotice && (
             <div className="flex items-center justify-between rounded-xl border border-emerald-300 bg-emerald-50 dark:border-emerald-800 dark:bg-emerald-950/60 p-4 text-xs text-emerald-900 dark:text-emerald-200">

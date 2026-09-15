@@ -48,16 +48,16 @@ export function LeadQueueTable({
   });
 
   return (
-    <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-panel)] shadow-sm">
+    <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-panel)] shadow-sm w-full max-w-full min-w-0 overflow-hidden">
       {/* Table Header Controls */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 border-b border-[var(--color-border-subtle)] p-4 sm:p-5">
         <div>
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2">
             <h3 className="text-base font-bold text-[var(--color-text-primary)]">
               Ontario Domestic Student Master Registry
             </h3>
-            <span className="rounded-full bg-[var(--color-brand-subtle)] px-2 py-0.5 text-xs font-mono font-semibold text-[var(--color-brand-primary)]">
-              Airtable Synced (15,240 Total)
+            <span className="rounded-full bg-[var(--color-brand-subtle)] px-2 py-0.5 text-xs font-mono font-semibold text-[var(--color-brand-primary)] whitespace-nowrap shrink-0">
+              15.2k Synced
             </span>
           </div>
           <p className="mt-0.5 text-xs text-[var(--color-text-secondary)]">
@@ -79,14 +79,14 @@ export function LeadQueueTable({
       </div>
 
       {/* Filter Tabs Bar */}
-      <div className="flex items-center gap-1.5 overflow-x-auto border-b border-[var(--color-border-subtle)] px-4 py-2 text-xs">
+      <div className="flex items-center gap-1.5 overflow-x-auto border-b border-[var(--color-border-subtle)] px-4 py-2 text-xs scrollbar-none w-full max-w-full">
         {[
-          { label: "All Leads", count: "15,240", key: "All" },
-          { label: "Verified & Interested", count: "1,837", key: "Verified" },
-          { label: "Pending Dial", count: "6,810", key: "Pending" },
-          { label: "Closed / Not Interested", count: "3,280", key: "Closed" },
-          { label: "Invalid / Disconnected", count: "2,874", key: "Invalid" },
-          { label: "DNC Permanent", count: "412", key: "DNC" },
+          { label: "All", count: "15.2k", key: "All" },
+          { label: "Verified", count: "1.8k", key: "Verified" },
+          { label: "Pending", count: "6.8k", key: "Pending" },
+          { label: "Closed", count: "3.3k", key: "Closed" },
+          { label: "Invalid", count: "2.9k", key: "Invalid" },
+          { label: "DNC", count: "412", key: "DNC" },
         ].map((tab) => (
           <button
             key={tab.key}
@@ -106,7 +106,7 @@ export function LeadQueueTable({
       </div>
 
       {/* Table Content */}
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto w-full max-w-full">
         <table className="table-fixed w-full min-w-[960px] text-left text-xs">
           <thead>
             <tr className="border-b border-[var(--color-border)] bg-[var(--color-panel-subtle)] text-[var(--color-text-secondary)] uppercase font-semibold">
@@ -148,7 +148,7 @@ export function LeadQueueTable({
                   {/* 3. Stale Age & Source */}
                   <td className="px-4 py-3">
                     <div className="flex items-center gap-1.5">
-                      <span className="inline-block rounded bg-amber-100 text-amber-800 dark:bg-amber-950/60 dark:text-amber-300 px-1.5 py-0.2 text-xs font-mono font-bold">
+                      <span className="inline-block rounded bg-amber-100 text-amber-800 dark:bg-amber-950/60 dark:text-amber-300 px-1.5 py-0.2 text-xs font-mono font-bold whitespace-nowrap shrink-0">
                         {s.staleDays}d Stale
                       </span>
                     </div>
@@ -160,7 +160,7 @@ export function LeadQueueTable({
                   {/* 4. Verification Outcome */}
                   <td className="px-4 py-3">
                     <span
-                      className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-xs font-semibold whitespace-nowrap ${
+                      className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-xs font-semibold whitespace-nowrap shrink-0 ${
                         s.verificationStatus === "Verified & Interested"
                           ? "bg-emerald-100 text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-300"
                           : s.verificationStatus === "DNC Opt-Out (Permanent)"

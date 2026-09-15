@@ -197,13 +197,13 @@ export function WorkflowCanvas() {
       {/* Top Header */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-[var(--color-border-subtle)] pb-5">
         <div>
-          <div className="flex items-center gap-2">
-            <span className="flex h-2.5 w-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="flex h-2.5 w-2.5 rounded-full bg-emerald-500 animate-pulse shrink-0"></span>
             <h3 className="text-base sm:text-lg font-bold text-[var(--color-text-primary)]">
               Autonomous Admissions Voice Verification Architecture
             </h3>
-            <span className="rounded-md bg-[var(--color-brand-subtle)] px-2.5 py-0.5 text-xs font-semibold text-[var(--color-brand-primary)] font-mono">
-              Vapi + Twilio SIP + n8n + Airtable
+            <span className="rounded-md bg-[var(--color-brand-subtle)] px-2 py-0.5 text-xs font-semibold text-[var(--color-brand-primary)] font-mono whitespace-nowrap shrink-0">
+              Vapi • n8n Stack
             </span>
           </div>
           <p className="mt-1 text-xs sm:text-sm text-[var(--color-text-secondary)]">
@@ -238,9 +238,9 @@ export function WorkflowCanvas() {
       <div className="mt-6 space-y-6">
         {/* Tier 1: Pre-Call Ingestion & Compliance Gateway */}
         <div>
-          <div className="flex items-center justify-between mb-3">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-3">
             <div className="flex items-center gap-2">
-              <span className="rounded bg-indigo-100 text-indigo-800 dark:bg-indigo-950 dark:text-indigo-300 px-2 py-0.5 text-xs font-mono font-bold uppercase tracking-wider">
+              <span className="rounded bg-indigo-100 text-indigo-800 dark:bg-indigo-950 dark:text-indigo-300 px-2 py-0.5 text-xs font-mono font-bold uppercase tracking-wider whitespace-nowrap shrink-0">
                 Phase 1
               </span>
               <h4 className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[var(--color-text-primary)]">
@@ -352,9 +352,9 @@ export function WorkflowCanvas() {
 
         {/* Tier 2: In-Call Audit & Admissions Dispatch */}
         <div>
-          <div className="flex items-center justify-between mb-3">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-3">
             <div className="flex items-center gap-2">
-              <span className="rounded bg-teal-100 text-teal-800 dark:bg-teal-950 dark:text-teal-300 px-2 py-0.5 text-xs font-mono font-bold uppercase tracking-wider">
+              <span className="rounded bg-teal-100 text-teal-800 dark:bg-teal-950 dark:text-teal-300 px-2 py-0.5 text-xs font-mono font-bold uppercase tracking-wider whitespace-nowrap shrink-0">
                 Phase 2
               </span>
               <h4 className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[var(--color-text-primary)]">
@@ -452,12 +452,12 @@ export function WorkflowCanvas() {
                 <selectedNode.icon className="h-6 w-6" />
               </div>
               <div>
-                <div className="flex items-center gap-2">
+                <div className="flex flex-wrap items-center gap-2">
                   <span className="text-xs font-bold text-[var(--color-text-muted)] font-mono uppercase tracking-wider">
                     STEP {selectedNode.stepNumber} &bull; PHASE {selectedNode.stage} &bull; {selectedNode.category}
                   </span>
-                  <span className="rounded bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 px-2 py-0.5 text-xs font-mono font-bold">
-                    PRODUCTION ACTIVE
+                  <span className="rounded bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 px-2 py-0.5 text-xs font-mono font-bold whitespace-nowrap shrink-0">
+                    Active Node
                   </span>
                 </div>
                 <h4 className="text-base font-bold text-[var(--color-text-primary)] mt-0.5">
