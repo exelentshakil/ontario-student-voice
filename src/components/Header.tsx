@@ -64,16 +64,16 @@ export function Header({
             <span className="text-[var(--color-border)]">•</span>
             <span
               suppressHydrationWarning
-              className={`inline-flex items-center gap-1 rounded px-1.5 py-0.5 text-xs font-semibold ${
+              className={`inline-flex items-center gap-1 rounded px-2 py-0.5 text-xs font-semibold whitespace-nowrap shrink-0 ${
                 complianceState.isWithinBusinessHours
                   ? "bg-emerald-100 text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-300"
                   : "bg-amber-100 text-amber-800 dark:bg-amber-950/60 dark:text-amber-300"
               }`}
             >
-              <Clock className="h-3 w-3" />
+              <Clock className="h-3 w-3 shrink-0" />
               {complianceState.isWithinBusinessHours
-                ? "Ontario Calling Window Open (09:00 - 20:00 EST)"
-                : "Calling Window Closed (Paused per CRTC Rules)"}
+                ? "CRTC Window Open (09:00–20:00 EST)"
+                : "CRTC Window Paused (Rules Lock)"}
             </span>
           </div>
 

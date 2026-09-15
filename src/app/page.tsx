@@ -120,13 +120,13 @@ export default function Home() {
           {/* Section Hero Banner */}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[var(--color-border-subtle)] pb-6">
             <div>
-              <div className="flex items-center gap-2.5">
+              <div className="flex flex-wrap items-center gap-2.5">
                 <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-[var(--color-text-primary)]">
                   Ontario Career College Voice Verification Pipeline
                 </h1>
-                <span className="inline-flex items-center gap-1 rounded-full bg-indigo-50 dark:bg-indigo-950/60 border border-indigo-200 dark:border-indigo-800/60 px-2.5 py-0.5 text-xs font-bold text-indigo-700 dark:text-indigo-300">
-                  <ShieldCheck className="h-3.5 w-3.5" />
-                  CRTC 2014-155 Certified
+                <span className="inline-flex items-center gap-1 rounded-full bg-indigo-50 dark:bg-indigo-950/60 border border-indigo-200 dark:border-indigo-800/60 px-2.5 py-0.5 text-xs font-bold text-indigo-700 dark:text-indigo-300 whitespace-nowrap shrink-0">
+                  <ShieldCheck className="h-3.5 w-3.5 shrink-0" />
+                  CRTC Certified
                 </span>
               </div>
               <p className="mt-1 text-xs sm:text-sm text-[var(--color-text-secondary)]">

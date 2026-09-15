@@ -46,7 +46,7 @@ const NODES: NodeItem[] = [
     stepNumber: "01",
     title: "Airtable Lead Ingestion",
     category: "System of Record",
-    badge: "15,240 Stale Records",
+    badge: "15.2k Records",
     badgeColor: "bg-blue-50 text-blue-700 border-blue-200 dark:bg-blue-950/60 dark:text-blue-300 dark:border-blue-900",
     icon: Database,
     description: "Ingests domestic student records collected via Meta quizzes and landing pages that are 1–2 years stale.",
@@ -60,7 +60,7 @@ const NODES: NodeItem[] = [
     stepNumber: "02",
     title: "CRTC & Ontario TZ Gate",
     category: "Regulatory Compliance",
-    badge: "Mon–Sat 09:00–20:00 EST",
+    badge: "09:00–20:00 EST",
     badgeColor: "bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-950/60 dark:text-emerald-300 dark:border-emerald-900",
     icon: Clock,
     description: "Hardware & software lock enforcing CRTC telemarketing calling hours; Sunday dials are strictly blocked at carrier trunk.",
@@ -74,7 +74,7 @@ const NODES: NodeItem[] = [
     stepNumber: "03",
     title: "Vapi Voice Dispatcher",
     category: "Telephony Infrastructure",
-    badge: "Toronto Edge SIP POP",
+    badge: "Toronto POP",
     badgeColor: "bg-indigo-50 text-indigo-700 border-indigo-200 dark:bg-indigo-950/60 dark:text-indigo-300 dark:border-indigo-900",
     icon: Radio,
     description: "PSTN carrier outbound dialer bridging via Twilio Elastic SIP trunk with sub-400ms voice pipeline.",
@@ -88,7 +88,7 @@ const NODES: NodeItem[] = [
     stepNumber: "04",
     title: "AI Disclosure & Recording SLA",
     category: "Mandatory Opener",
-    badge: "First 5-Second SLA",
+    badge: "5s AI SLA",
     badgeColor: "bg-amber-50 text-amber-700 border-amber-200 dark:bg-amber-950/60 dark:text-amber-300 dark:border-amber-900",
     icon: Bot,
     description: "Explicitly states automated AI caller identity and two-party recording notice in the very first sentence.",
@@ -104,7 +104,7 @@ const NODES: NodeItem[] = [
     stepNumber: "05",
     title: "Identity & Program Check",
     category: "Data Hygiene",
-    badge: "3 Fields Validated",
+    badge: "3 Fields",
     badgeColor: "bg-teal-50 text-teal-700 border-teal-200 dark:bg-teal-950/60 dark:text-teal-300 dark:border-teal-900",
     icon: UserCheck,
     description: "Confirms student legal name, intended program interest, Ontario city of residence, and employment status.",
@@ -118,7 +118,7 @@ const NODES: NodeItem[] = [
     stepNumber: "06",
     title: "Tuition Expectation Filter",
     category: "Honest Expectation Filter",
-    badge: "Tuition Reality Check",
+    badge: "Tuition Gate",
     badgeColor: "bg-rose-50 text-rose-700 border-rose-200 dark:bg-rose-950/60 dark:text-rose-300 dark:border-rose-900",
     icon: AlertTriangle,
     description: "Transparently explains programs are tuition-based diploma programs, not free government grants, with no job guarantees.",
@@ -132,7 +132,7 @@ const NODES: NodeItem[] = [
     stepNumber: "07",
     title: "Verbal Consent & SHA-256",
     category: "Cryptographic Audit",
-    badge: "SHA-256 Tamper-Proof",
+    badge: "SHA-256",
     badgeColor: "bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-950/60 dark:text-emerald-300 dark:border-emerald-900",
     icon: FileCheck2,
     description: "Captures explicit verbal permission to transfer file to partner college; computes SHA-256 hash with ISO timestamp.",
@@ -146,7 +146,7 @@ const NODES: NodeItem[] = [
     stepNumber: "08",
     title: "4-Way Routing & n8n Sync",
     category: "Admissions Handoff",
-    badge: "Warm Transfer / Cal.com",
+    badge: "Warm Transfer",
     badgeColor: "bg-purple-50 text-purple-700 border-purple-200 dark:bg-purple-950/60 dark:text-purple-300 dark:border-purple-900",
     icon: PhoneForwarded,
     description: "Bridges confirmed students to live admissions reps via SIP conference, books calendar callback, or logs permanent DNC.",
@@ -294,7 +294,7 @@ export function WorkflowCanvas() {
                       </div>
 
                       {/* Status Badge */}
-                      <span className={`rounded-md border px-2 py-0.5 text-xs font-mono font-semibold ${node.badgeColor}`}>
+                      <span className={`rounded-md border px-2 py-0.5 text-xs font-mono font-semibold whitespace-nowrap shrink-0 ${node.badgeColor}`}>
                         {node.badge}
                       </span>
                     </div>
@@ -408,7 +408,7 @@ export function WorkflowCanvas() {
                       </div>
 
                       {/* Status Badge */}
-                      <span className={`rounded-md border px-2 py-0.5 text-xs font-mono font-semibold ${node.badgeColor}`}>
+                      <span className={`rounded-md border px-2 py-0.5 text-xs font-mono font-semibold whitespace-nowrap shrink-0 ${node.badgeColor}`}>
                         {node.badge}
                       </span>
                     </div>
@@ -467,7 +467,7 @@ export function WorkflowCanvas() {
             </div>
 
             <div className="flex items-center gap-2">
-              <span className={`rounded-lg border px-3 py-1 text-xs font-mono font-bold ${selectedNode.badgeColor}`}>
+              <span className={`rounded-lg border px-3 py-1 text-xs font-mono font-bold whitespace-nowrap shrink-0 ${selectedNode.badgeColor}`}>
                 {selectedNode.badge}
               </span>
             </div>

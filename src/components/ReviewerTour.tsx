@@ -75,7 +75,7 @@ export function ReviewerTour({
       id: 4,
       number: "04",
       title: "Turnkey Blueprints Export",
-      badge: "100% Code Ownership",
+      badge: "Turnkey Code",
       badgeColor: "bg-purple-50 text-purple-700 border-purple-200 dark:bg-purple-950/60 dark:text-purple-300 dark:border-purple-900",
       icon: Download,
       description: "Production n8n workflow JSON, Vapi assistant spec, and Twilio SIP scripts.",
@@ -95,11 +95,11 @@ export function ReviewerTour({
             <Sparkles className="h-4 w-4" />
           </div>
           <div>
-            <div className="flex items-center gap-2">
-              <span className="text-xs font-bold uppercase tracking-wider text-[var(--color-brand-primary)] font-mono">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="text-xs font-bold uppercase tracking-wider text-[var(--color-brand-primary)] font-mono whitespace-nowrap shrink-0">
                 Interactive Client Validation Guide
               </span>
-              <span className="rounded-full bg-indigo-100 text-indigo-800 dark:bg-indigo-950 dark:text-indigo-300 px-2 py-0.5 text-xs font-bold font-mono">
+              <span className="rounded-full bg-indigo-100 text-indigo-800 dark:bg-indigo-950 dark:text-indigo-300 px-2 py-0.5 text-xs font-bold font-mono whitespace-nowrap shrink-0">
                 {completedSteps.length} of {steps.length} Tested
               </span>
             </div>
@@ -176,7 +176,7 @@ export function ReviewerTour({
                         </span>
                       </div>
 
-                      <span className={`rounded px-1.5 py-0.5 text-xs font-mono font-semibold border ${step.badgeColor}`}>
+                      <span className={`rounded px-1.5 py-0.5 text-xs font-mono font-semibold border whitespace-nowrap shrink-0 ${step.badgeColor}`}>
                         {step.badge}
                       </span>
                     </div>
