@@ -19,7 +19,7 @@ html_content = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Production Scope & Formal Estimate - Ontario Student Voice Verification</title>
+  <title>Production Scope & Formal Estimate - Autonomous Ontario Career College Voice Verification Pipeline</title>
   <style>
     @page {{
       size: letter portrait;
@@ -41,7 +41,7 @@ html_content = f"""<!DOCTYPE html>
       font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       color: #0f172a;
       line-height: 1.32;
-      font-size: 9.6px;
+      font-size: 9.4px;
     }}
 
     .page-container {{
@@ -50,6 +50,7 @@ html_content = f"""<!DOCTYPE html>
       justify-content: space-between;
       height: 100%;
       box-sizing: border-box;
+      gap: 6px;
     }}
 
     /* 1. Executive Header */
@@ -59,309 +60,398 @@ html_content = f"""<!DOCTYPE html>
       align-items: center;
       gap: 12px;
       border-bottom: 2px solid #4f46e5;
-      padding-bottom: 7px;
+      padding-bottom: 6px;
     }}
-    .brand-section {{
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }}
-    .brand-logo {{
-      width: 36px;
-      height: 36px;
-      object-fit: contain;
-      border-radius: 6px;
+    .header-left {{
+      flex: 1;
+      min-width: 0;
     }}
     .brand-title {{
-      font-size: 15px;
+      font-size: 8.5px;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #4f46e5;
+      margin-bottom: 2px;
+      white-space: nowrap;
+    }}
+    h1 {{
+      font-size: 14px;
       font-weight: 800;
       color: #0f172a;
-      letter-spacing: -0.3px;
+      margin: 0 0 2px 0;
+      letter-spacing: -0.02em;
+      line-height: 1.18;
+      white-space: nowrap;
     }}
-    .brand-subtitle {{
-      font-size: 8.8px;
+    .subtitle {{
+      font-size: 8.6px;
       color: #475569;
-      margin-top: 1px;
+      margin: 0;
+      line-height: 1.25;
+      white-space: nowrap;
     }}
-    .meta-box {{
+    .meta-card {{
+      flex-shrink: 0;
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 5px 10px;
+      font-size: 8.3px;
       text-align: right;
-      font-size: 8.2px;
-      color: #334155;
+      line-height: 1.36;
+      white-space: nowrap;
     }}
-    .meta-box strong {{
+    .meta-card strong {{
       color: #0f172a;
     }}
-    .demo-pill {{
+    .live-badge {{
       display: inline-block;
-      background: #eef2ff;
-      border: 1px solid #c7d2fe;
-      color: #4338ca;
-      font-size: 8px;
+      background: #ecfdf5;
+      color: #059669;
+      border: 1px solid #a7f3d0;
       font-weight: 700;
-      padding: 2px 7px;
+      padding: 1px 5px;
       border-radius: 9999px;
-      margin-top: 3px;
-      text-decoration: none;
+      font-size: 8px;
+      text-transform: uppercase;
+      margin-left: 3px;
     }}
 
     /* 2. Scope & Milestones Table */
-    .section-title {{
-      font-size: 9.8px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      color: #1e293b;
-      margin-bottom: 4px;
+    .scope-block {{
+      margin-top: 0;
+    }}
+    .section-header {{
       display: flex;
       justify-content: space-between;
       align-items: center;
+      margin-bottom: 3.5px;
     }}
-    table.scope-table {{
+    .section-title {{
+      font-size: 9.6px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #1e293b;
+      border-left: 3px solid #4f46e5;
+      padding-left: 6px;
+      margin: 0;
+    }}
+    .section-meta {{
+      font-size: 8.2px;
+      color: #64748b;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    }}
+    table {{
       width: 100%;
       border-collapse: collapse;
-      font-size: 8.6px;
-      table-layout: fixed;
     }}
-    table.scope-table th {{
+    th {{
       background: #f1f5f9;
       color: #334155;
-      text-align: left;
       font-weight: 700;
-      padding: 4px 6px;
-      border-top: 1px solid #cbd5e1;
-      border-bottom: 1px solid #cbd5e1;
+      text-transform: uppercase;
+      font-size: 8.2px;
+      letter-spacing: 0.04em;
+      border: 1px solid #cbd5e1;
+      padding: 3.8px 6px;
+      text-align: left;
     }}
-    table.scope-table td {{
-      padding: 4px 6px;
-      border-bottom: 1px solid #e2e8f0;
+    td {{
+      border: 1px solid #e2e8f0;
+      padding: 3.8px 6px;
+      font-size: 8.5px;
       vertical-align: top;
     }}
-    table.scope-table tr:nth-child(even) {{
+    .phase-num {{
+      font-weight: 800;
+      color: #1e293b;
+      font-size: 8.5px;
+      white-space: nowrap;
+    }}
+    .phase-name {{
+      font-weight: 700;
+      color: #0f172a;
+      font-size: 8.8px;
+    }}
+    .phase-desc {{
+      color: #475569;
+      font-size: 7.9px;
+      margin-top: 1px;
+      line-height: 1.22;
+    }}
+    .phase-0-row {{
+      background: #f0fdf4;
+    }}
+    .phase-0-badge {{
+      color: #15803d;
+      font-weight: 800;
+    }}
+    .total-row {{
+      background: #0f172a;
+      color: #ffffff;
+      font-weight: 800;
+      border: 1px solid #0f172a;
+    }}
+    .total-row td {{
+      border: 1px solid #0f172a;
+      padding: 4.2px 6px;
+      font-size: 8.8px;
+    }}
+
+    /* 3. 2-Column Technical & Financial Breakdown */
+    .grid-2col {{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 7px;
+    }}
+    .card-box {{
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
       background: #f8fafc;
+      padding: 5px 9px;
+    }}
+    .card-box-title {{
+      font-size: 8.4px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #1e293b;
+      margin: 0 0 3px 0;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 2px;
+    }}
+    .milestone-item {{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 6px;
+      border-bottom: 1px dotted #cbd5e1;
+      padding: 2px 0;
+      font-size: 7.8px;
+    }}
+    .milestone-item:last-child {{
+      border-bottom: none;
+      padding-bottom: 0;
     }}
     .milestone-name {{
-      font-weight: 700;
+      color: #334155;
+    }}
+    .milestone-val {{
+      font-weight: 800;
       color: #0f172a;
+      font-family: ui-monospace, monospace;
+      white-space: nowrap;
     }}
-    .milestone-desc {{
-      color: #475569;
-      font-size: 8px;
-      line-height: 1.25;
-      margin-top: 1px;
+    .guardrail-item {{
+      font-size: 7.8px;
+      color: #334155;
+      margin-bottom: 2px;
+      padding-left: 10px;
+      position: relative;
+      line-height: 1.22;
     }}
-    .price-col {{
-      text-align: right;
-      font-weight: 700;
-      color: #0f172a;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    .guardrail-item:last-child {{
+      margin-bottom: 0;
     }}
-    .status-live {{
-      display: inline-block;
-      background: #ecfdf5;
-      color: #047857;
-      border: 1px solid #a7f3d0;
-      border-radius: 4px;
-      padding: 1px 4px;
-      font-weight: 700;
+    .guardrail-item::before {{
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #16a34a;
+      font-weight: 800;
       font-size: 7.5px;
     }}
 
-    /* 3. Financial Summary & Architecture Stack */
-    .summary-grid {{
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 10px;
-    }}
-    .tech-card {{
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
+    /* 4. Commercial Terms Section */
+    .terms-box {{
+      border: 1px solid #cbd5e1;
       border-radius: 6px;
-      padding: 6px 9px;
-      font-size: 8.2px;
+      background: #ffffff;
+      padding: 5px 9px;
     }}
-    .tech-card-title {{
-      font-weight: 700;
-      color: #334155;
-      text-transform: uppercase;
-      font-size: 8px;
-      margin-bottom: 4px;
-      letter-spacing: 0.3px;
-    }}
-    .tech-list {{
+    .terms-grid {{
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3px 8px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+    }}
+    .term-col {{
+      font-size: 7.8px;
+      line-height: 1.22;
+    }}
+    .term-title {{
+      font-weight: 800;
+      color: #4f46e5;
+      text-transform: uppercase;
+      font-size: 7.7px;
+      margin-bottom: 1px;
+    }}
+    .term-body {{
       color: #475569;
     }}
-    .total-card {{
-      background: #eef2ff;
-      border: 1px solid #c7d2fe;
-      border-radius: 6px;
-      padding: 6px 10px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }}
-    .total-row {{
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-    }}
-    .total-label {{
-      font-size: 9.5px;
-      font-weight: 700;
-      color: #1e1b4b;
-    }}
-    .total-amount {{
-      font-size: 16px;
-      font-weight: 900;
-      color: #4338ca;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-    }}
-    .total-sub {{
-      font-size: 7.8px;
-      color: #4338ca;
-      line-height: 1.2;
-    }}
 
-    /* 4. Production SLAs & Guarantees */
-    .sla-section {{
-      background: #faf5ff;
-      border: 1px solid #e9d5ff;
+    /* 5. Formal Acceptance Authorization Block */
+    .auth-block {{
+      border: 1px solid #94a3b8;
       border-radius: 6px;
-      padding: 5px 9px;
-      font-size: 8px;
-      color: #581c87;
+      background: #f8fafc;
+      padding: 6px 11px;
+    }}
+    .auth-title {{
+      font-size: 8.4px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #0f172a;
+      margin-bottom: 3.5px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 12px;
-    }}
-    .sla-item strong {{
-      color: #3b0764;
-    }}
-
-    /* 5. Authorization & Acceptance */
-    .auth-section {{
-      border: 1px solid #cbd5e1;
-      background: #ffffff;
-      border-radius: 6px;
-      padding: 6px 10px;
-    }}
-    .auth-header {{
-      display: flex;
-      justify-content: space-between;
-      font-size: 8px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.4px;
-      color: #334155;
-      border-bottom: 1px solid #e2e8f0;
-      padding-bottom: 3px;
-      margin-bottom: 5px;
+      border-bottom: 1px solid #cbd5e1;
+      padding-bottom: 2px;
     }}
     .auth-grid {{
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 14px;
-      font-size: 8px;
     }}
     .auth-party {{
       display: flex;
       flex-direction: column;
       gap: 2px;
+      font-size: 7.9px;
     }}
     .auth-party-title {{
       font-weight: 700;
-      color: #0f172a;
+      color: #334155;
+      text-transform: uppercase;
+      font-size: 7.8px;
+      margin-bottom: 1px;
     }}
     .auth-sign-line {{
       display: flex;
-      justify-content: space-between;
       align-items: flex-end;
-      margin-top: 4px;
-      gap: 6px;
+      gap: 8px;
+      margin-top: 3px;
     }}
     .auth-sign-field {{
-      border-bottom: 1px solid #94a3b8;
-      height: 16px;
       flex: 1;
-      font-family: 'Brush Script MT', cursive, sans-serif;
-      font-size: 13px;
-      color: #1e293b;
-      line-height: 16px;
+      border-bottom: 1.2px solid #475569;
+      min-height: 22px;
+      display: flex;
+      align-items: flex-end;
+      font-family: "Brush Script MT", "Caveat", cursive, sans-serif;
+      font-size: 14px;
+      color: #1e3a8a;
       padding-left: 4px;
+      padding-bottom: 1px;
     }}
     .auth-date-field {{
-      border-bottom: 1px solid #94a3b8;
-      height: 16px;
-      width: 75px;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      width: 90px;
+      border-bottom: 1.2px solid #475569;
+      min-height: 22px;
+      font-family: ui-monospace, monospace;
       font-size: 8px;
+      color: #334155;
       text-align: center;
-      line-height: 16px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 1px;
+      white-space: nowrap;
     }}
     .auth-label {{
       font-size: 7px;
       color: #64748b;
       text-transform: uppercase;
+      margin-top: 1.5px;
     }}
 
     /* 6. Executive Signature Footer */
     .footer-container {{
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      background: #f8fafc;
+      padding: 5px 11px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 12px;
-      border-top: 1px solid #e2e8f0;
-      padding-top: 5px;
     }}
     .footer-founder {{
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 9px;
+      flex: 1;
+      min-width: 0;
     }}
     .founder-avatar {{
-      width: 32px;
-      height: 32px;
-      border-radius: 9999px;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
       object-fit: cover;
       border: 1.5px solid #4f46e5;
+      flex-shrink: 0;
     }}
     .founder-info {{
-      font-size: 8.2px;
-      line-height: 1.25;
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      min-width: 0;
     }}
     .founder-name {{
-      font-weight: 700;
+      font-size: 8.8px;
       color: #0f172a;
+      line-height: 1.18;
+      white-space: nowrap;
+    }}
+    .founder-name strong {{
+      color: #0f172a;
+      font-weight: 800;
     }}
     .founder-company {{
-      color: #475569;
+      font-size: 8px;
+      color: #334155;
+      line-height: 1.18;
+      white-space: nowrap;
+    }}
+    .founder-company strong {{
+      color: #1e293b;
+      font-weight: 700;
     }}
     .founder-sub {{
-      font-size: 7.4px;
-      color: #64748b;
+      font-size: 7.5px;
+      color: #475569;
+      line-height: 1.18;
+      white-space: nowrap;
     }}
     .footer-brand {{
       display: flex;
-      align-items: center;
-      gap: 8px;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 2.5px;
+      flex-shrink: 0;
     }}
     .business-logo {{
-      width: 22px;
-      height: 22px;
+      height: 17px;
+      width: auto;
       object-fit: contain;
     }}
     .demo-badge {{
-      background: #0f172a;
-      color: #ffffff;
-      font-weight: 700;
       font-size: 7.6px;
-      padding: 3px 8px;
-      border-radius: 4px;
+      color: #4338ca;
+      background: #eef2ff;
+      border: 1px solid #c7d2fe;
+      padding: 1.5px 6px;
+      border-radius: 3px;
+      font-weight: 700;
+      font-family: ui-monospace, monospace;
       text-decoration: none;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      white-space: nowrap;
     }}
   </style>
 </head>
@@ -370,143 +460,172 @@ html_content = f"""<!DOCTYPE html>
 
   <!-- 1. Executive Header -->
   <div class="header">
-    <div class="brand-section">
-      <img src="data:image/png;base64,{logo_b64}" alt="BarakahSoft" class="brand-logo" />
-      <div>
-        <div class="brand-title">BarakahSoft LLC • Production Scope &amp; Formal Estimate</div>
-        <div class="brand-subtitle">Autonomous Outbound Voice Verification &amp; Enrolment System for Ontario Career Colleges</div>
-      </div>
+    <div class="header-left">
+      <div class="brand-title">BarakahSoft LLC • Systems Architecture • Ref #BS-2026-ONT-VOICE</div>
+      <h1>Autonomous Ontario Career College Voice Verification Pipeline</h1>
+      <p class="subtitle">Vapi Voice Platform • Twilio Elastic SIP (Toronto POP) • CRTC 2014-155 Hours Lock • Airtable &amp; n8n Sync</p>
     </div>
-    <div class="meta-box">
-      <div><strong>Date:</strong> 15 Sep 2026 • <strong>Doc ID:</strong> EST-ONT-2026-01</div>
-      <div><strong>Engagement:</strong> Turnkey Implementation • <strong>Timeline:</strong> 10–12 Days</div>
-      <a href="https://ontario-student-voice.vercel.app" target="_blank" class="demo-pill">Live Demo: ontario-student-voice.vercel.app</a>
+    <div class="meta-card">
+      <div><strong>Client:</strong> Ontario Career College Enrolment Operations</div>
+      <div><strong>Timeline:</strong> 10–12 Business Days (5 Production Milestones)</div>
+      <div><strong>Turnkey Package:</strong> <strong>$1,500.00 Fixed USD</strong></div>
+      <div><strong>Live Prototype:</strong> <span class="live-badge">Verified &amp; Operational</span></div>
     </div>
   </div>
 
-  <!-- 2. Scope & Milestones Table -->
-  <div>
-    <div class="section-title">
-      <span>Turnkey Milestone Roadmap &amp; Deliverables</span>
-      <span style="font-size: 8px; font-weight: normal; color: #64748b;">Fixed-Price Comprehensive Package</span>
+  <!-- 2. Scope Table -->
+  <div class="scope-block">
+    <div class="section-header">
+      <h2 class="section-title">Production Scope &amp; Milestone Delivery Schedule</h2>
+      <div class="section-meta">Live Cockpit: https://ontario-student-voice.vercel.app</div>
     </div>
-    <table class="scope-table">
+
+    <table>
       <thead>
         <tr>
-          <th style="width: 17%;">Milestone</th>
-          <th style="width: 59%;">Technical Scope &amp; Deliverables</th>
-          <th style="width: 12%;">Duration</th>
-          <th style="width: 12%; text-align: right;">Amount</th>
+          <th style="width: 12%;">Milestone</th>
+          <th style="width: 58%;">Architecture &amp; Production Engineering Deliverables</th>
+          <th style="width: 10%; text-align: center;">Timeline</th>
+          <th style="width: 8%; text-align: center;">Share</th>
+          <th style="width: 12%; text-align: right;">Investment</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr class="phase-0-row">
+          <td class="phase-num"><span class="phase-0-badge">Phase 0</span></td>
           <td>
-            <div class="milestone-name">Phase 0: Prototype</div>
-            <span class="status-live">DELIVERED &amp; LIVE</span>
+            <div class="phase-name">Interactive Architecture Prototype &amp; Outbound State Simulator (Live)</div>
+            <div class="phase-desc">Working 7-stage voice flow with mandatory AI disclosure, tuition expectation filter, dual-provider OpenAI/Gemini failover, America/Toronto business hours lock, SHA-256 consent generator, and Airtable queue. Built upfront to de-risk delivery.</div>
           </td>
-          <td>
-            <div class="milestone-desc"><strong>Live Architectural Proof-of-Concept:</strong> Interactive 7-stage voice simulator, dual-provider OpenAI/Gemini failover, America/Toronto business hours lock, SHA-256 verbal consent generator, and Airtable queue.</div>
-          </td>
-          <td>Delivered</td>
-          <td class="price-col" style="color: #059669;">$0.00</td>
+          <td style="text-align: center; font-weight: 700; white-space: nowrap;">Live Now</td>
+          <td style="text-align: center; color: #16a34a; font-weight: 700;">Included</td>
+          <td style="text-align: right; font-weight: 800; color: #16a34a;">$0.00 (Live)</td>
         </tr>
         <tr>
+          <td class="phase-num">Milestone 1</td>
           <td>
-            <div class="milestone-name">Milestone 1</div>
-            <div class="milestone-desc">Voice Agent Core</div>
+            <div class="phase-name">Vapi Voice Agent Core &amp; CRTC 7-Stage State Machine</div>
+            <div class="phase-desc">Production Vapi agent with Deepgram Nova-2 STT &amp; Cartesia Sonic Canadian voice; opening 5-second AI disclosure, 2-party recording notice, identity verification, tuition expectation filter, and timestamped verbal consent logging.</div>
           </td>
-          <td>
-            <div class="milestone-desc"><strong>Production Vapi Outbound Agent &amp; State Machine:</strong> Deepgram Nova-2 + Cartesia Canadian voice; mandatory 5-second AI disclosure, 2-party recording consent, identity verification, program/city checks, tuition expectation filter, and timestamped verbal consent capture.</div>
-          </td>
-          <td>3 Days</td>
-          <td class="price-col">$400.00</td>
+          <td style="text-align: center; font-weight: 600;">3 Days</td>
+          <td style="text-align: center; font-weight: 700; color: #4f46e5;">27%</td>
+          <td style="text-align: right; font-weight: 700;">$400.00</td>
         </tr>
         <tr>
+          <td class="phase-num">Milestone 2</td>
           <td>
-            <div class="milestone-name">Milestone 2</div>
-            <div class="milestone-desc">Batch Campaign Dialer</div>
+            <div class="phase-name">Batch Campaign Dialer, Concurrency Engine &amp; Ontario Hours Lock</div>
+            <div class="phase-desc">Airtable batch query runner with concurrency throttling (1–50 lines), automated busy/unanswered retry logic (3 attempts), real-time America/Toronto calling hours gate (Mon–Fri 9am–8pm, Sat 9am–5pm EST), and National DNCL scrubbing.</div>
           </td>
-          <td>
-            <div class="milestone-desc"><strong>Dialing Engine &amp; CRTC Calling Window Lock:</strong> Concurrency throttling (1–50 lines), automated busy/unanswered retry cadence, real-time Ontario hours lock (Mon–Fri 9am–8pm, Sat 9am–5pm EST, Sunday dial block), and National DNCL scrubbing.</div>
-          </td>
-          <td>2 Days</td>
-          <td class="price-col">$300.00</td>
+          <td style="text-align: center; font-weight: 600;">2 Days</td>
+          <td style="text-align: center; font-weight: 700; color: #4f46e5;">20%</td>
+          <td style="text-align: right; font-weight: 700;">$300.00</td>
         </tr>
         <tr>
+          <td class="phase-num">Milestone 3</td>
           <td>
-            <div class="milestone-name">Milestone 3</div>
-            <div class="milestone-desc">Airtable &amp; n8n Sync</div>
+            <div class="phase-name">n8n Middleware &amp; Bi-Directional Airtable Synchronization</div>
+            <div class="phase-desc">Self-hosted n8n webhook workflow consuming Vapi <code>call.ended</code> payloads; writes 14 typed fields (status, timeframe, tuition consent, SHA-256 hash, call recording URL) back to Airtable with zero raw transcript dumping.</div>
           </td>
-          <td>
-            <div class="milestone-desc"><strong>Bi-Directional Middleware &amp; Structured Extraction:</strong> Self-hosted n8n webhook consuming Vapi <code>call.ended</code> payloads; writes 14 typed fields to Airtable (status, timeframe, tuition consent, SHA-256 hash) with 0 raw transcript dumps.</div>
-          </td>
-          <td>2 Days</td>
-          <td class="price-col">$350.00</td>
+          <td style="text-align: center; font-weight: 600;">2 Days</td>
+          <td style="text-align: center; font-weight: 700; color: #4f46e5;">23%</td>
+          <td style="text-align: right; font-weight: 700;">$350.00</td>
         </tr>
         <tr>
+          <td class="phase-num">Milestone 4</td>
           <td>
-            <div class="milestone-name">Milestone 4</div>
-            <div class="milestone-desc">Transfers &amp; Recordings</div>
+            <div class="phase-name">Warm Transfer, Calendar Callback &amp; Audio Storage Pipeline</div>
+            <div class="phase-desc">SIP REFER warm transfer bridging confirmed prospects directly to human admissions staff; Cal.com callback booking fallback; dual-channel MP3 recordings and timestamped transcripts linked to Airtable record IDs.</div>
           </td>
-          <td>
-            <div class="milestone-desc"><strong>Warm Transfer, Calendar Booking &amp; Audio Storage:</strong> SIP REFER transfer bridging confirmed prospects to human admissions lines; Cal.com callback booking fallback; dual-channel MP3 recordings and timestamped transcripts linked to Airtable records.</div>
-          </td>
-          <td>2 Days</td>
-          <td class="price-col">$250.00</td>
+          <td style="text-align: center; font-weight: 600;">2 Days</td>
+          <td style="text-align: center; font-weight: 700; color: #4f46e5;">17%</td>
+          <td style="text-align: right; font-weight: 700;">$250.00</td>
         </tr>
         <tr>
+          <td class="phase-num">Milestone 5</td>
           <td>
-            <div class="milestone-name">Milestone 5</div>
-            <div class="milestone-desc">DNC, QA &amp; Handover</div>
+            <div class="phase-name">Permanent DNC Enforcement, Live Carrier QA &amp; 60-Min Handover</div>
+            <div class="phase-desc">Cross-campaign permanent opt-out enforcement; 50-call live carrier staging QA run; full operations &amp; prompt tuning documentation; 60-minute recorded video handover call with admissions leadership.</div>
           </td>
-          <td>
-            <div class="milestone-desc"><strong>Permanent DNC Blocklist, Carrier QA &amp; Handover:</strong> Cross-campaign opt-out enforcement; 50-call live carrier test run; full operational documentation &amp; prompt tuning guide; 60-minute recorded video handover call with admissions staff.</div>
-          </td>
-          <td>2 Days</td>
-          <td class="price-col">$200.00</td>
+          <td style="text-align: center; font-weight: 600;">2 Days</td>
+          <td style="text-align: center; font-weight: 700; color: #4f46e5;">13%</td>
+          <td style="text-align: right; font-weight: 700;">$200.00</td>
+        </tr>
+        <tr class="total-row">
+          <td colspan="2" style="font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;">Total Turnkey Production Scope (All 8 Brief Deliverables Included)</td>
+          <td style="text-align: center; font-weight: 800;">10–12 Days</td>
+          <td style="text-align: center; font-weight: 800;">100%</td>
+          <td style="text-align: right; font-weight: 800; font-family: ui-monospace, monospace; font-size: 10px;">$1,500.00</td>
         </tr>
       </tbody>
     </table>
   </div>
 
-  <!-- 3. Financial Summary & Architecture Stack -->
-  <div class="summary-grid">
-    <div class="tech-card">
-      <div class="tech-card-title">Production Telephony &amp; Compliance Specifications</div>
-      <div class="tech-list">
-        <div>• <strong>Voice AI:</strong> Vapi Orchestrator (&lt;400ms)</div>
-        <div>• <strong>Telephony:</strong> Twilio SIP (Toronto POP)</div>
-        <div>• <strong>STT Model:</strong> Deepgram Nova-2 Telephony</div>
-        <div>• <strong>TTS Model:</strong> Cartesia Sonic Canadian</div>
-        <div>• <strong>LLM Primary:</strong> OpenAI gpt-4o-mini</div>
-        <div>• <strong>LLM Failover:</strong> Gemini 2.0 Flash (&lt;200ms)</div>
-        <div>• <strong>Middleware:</strong> n8n VPS Webhook Ingestion</div>
-        <div>• <strong>Compliance:</strong> CRTC 2014-155 &amp; PIPEDA</div>
+  <!-- 3. 2-Column Technical & Financial Breakdown -->
+  <div class="grid-2col">
+    <div class="card-box">
+      <div class="card-box-title">Milestone Escrow &amp; Release Schedule</div>
+      <div class="milestone-item">
+        <span class="milestone-name">Phase 0: Interactive Architectural Prototype (Live)</span>
+        <span class="milestone-val" style="color: #16a34a;">$0.00 (Delivered)</span>
+      </div>
+      <div class="milestone-item">
+        <span class="milestone-name">M1: Vapi Voice Agent &amp; 7-Stage State Machine</span>
+        <span class="milestone-val">$400.00 (Net 3 Days)</span>
+      </div>
+      <div class="milestone-item">
+        <span class="milestone-name">M2: Batch Campaign Dialer &amp; Ontario Hours Lock</span>
+        <span class="milestone-val">$300.00 (Net 5 Days)</span>
+      </div>
+      <div class="milestone-item">
+        <span class="milestone-name">M3: n8n Middleware &amp; 14-Field Airtable Sync</span>
+        <span class="milestone-val">$350.00 (Net 7 Days)</span>
+      </div>
+      <div class="milestone-item">
+        <span class="milestone-name">M4: Warm Transfer, Calendar Booking &amp; Audio S3</span>
+        <span class="milestone-val">$250.00 (Net 9 Days)</span>
+      </div>
+      <div class="milestone-item">
+        <span class="milestone-name">M5: Permanent DNC, Staging QA &amp; 60-Min Handover</span>
+        <span class="milestone-val">$200.00 (Net 11 Days)</span>
       </div>
     </div>
 
-    <div class="total-card">
-      <div class="total-row">
-        <span class="total-label">Total Turnkey Investment:</span>
-        <span class="total-amount">$1,500.00</span>
+    <div class="card-box">
+      <div class="card-box-title">Production Telephony &amp; Compliance Guardrails</div>
+      <div class="guardrail-item"><strong>PSTN Carrier:</strong> Twilio Elastic SIP trunk terminating at Toronto POP (&lt;400ms latency)</div>
+      <div class="guardrail-item"><strong>Voice Stack:</strong> Deepgram Nova-2 telephony STT + Cartesia Sonic Canadian voice persona</div>
+      <div class="guardrail-item"><strong>Dual AI Engine:</strong> OpenAI gpt-4o-mini primary with automatic Gemini 2.0 Flash failover</div>
+      <div class="guardrail-item"><strong>CRTC 2014-155:</strong> Hardware/software locked to Mon–Fri 9am–8pm &amp; Sat 9am–5pm EST</div>
+      <div class="guardrail-item"><strong>PIPEDA Consent:</strong> SHA-256 tamper-evident verbal consent hash logged per student</div>
+    </div>
+  </div>
+
+  <!-- 4. Commercial Terms Section -->
+  <div class="terms-box">
+    <div class="terms-grid">
+      <div class="term-col">
+        <div class="term-title">Fixed-Price Guarantee</div>
+        <div class="term-body">100% milestone-based fixed investment ($1,500.00). Zero hidden fees, zero vendor markups, zero scope creep.</div>
       </div>
-      <div class="total-sub">
-        <strong>100% Fixed-Price Guarantee.</strong> Zero hidden fees, zero vendor markups. Wholesale telephony (~$0.05 CAD/min) billed directly by Twilio &amp; Vapi to your existing accounts.
+      <div class="term-col">
+        <div class="term-title">30-Day Bug Warranty</div>
+        <div class="term-body">Full post-deployment coverage for prompt fine-tuning, webhook sync edge cases, and carrier error handling at $0 extra.</div>
+      </div>
+      <div class="term-col">
+        <div class="term-title">100% Code Ownership</div>
+        <div class="term-body">All n8n workflows, Vapi prompts, and Twilio configs reside 100% in your existing private accounts with no lock-in.</div>
+      </div>
+      <div class="term-col">
+        <div class="term-title">Handover &amp; Training</div>
+        <div class="term-body">60-minute recorded video walkthrough + step-by-step SOP so your team independently runs and tunes the agent.</div>
       </div>
     </div>
   </div>
 
-  <!-- 4. Production SLAs & Guarantees -->
-  <div class="sla-section">
-    <div class="sla-item">• <strong>30-Day Bug Warranty:</strong> Zero-cost bug fixes &amp; prompt tuning</div>
-    <div class="sla-item">• <strong>Zero Vendor Lock-in:</strong> 100% code, prompt, &amp; workflow ownership</div>
-    <div class="sla-item">• <strong>60-Min Handover:</strong> Full walkthrough so your team operates independently</div>
-  </div>
-
-  <!-- 5. Formal Authorization & Engagement Acceptance -->
-  <div class="auth-section">
-    <div class="auth-header">
+  <!-- 5. Formal Acceptance Authorization Block -->
+  <div class="auth-block">
+    <div class="auth-title">
       <span>Formal Authorization &amp; Engagement Acceptance</span>
       <span style="font-weight: 500; font-size: 7.4px; color: #475569;">Binding upon signature by authorized representatives</span>
     </div>
@@ -520,7 +639,7 @@ html_content = f"""<!DOCTYPE html>
         </div>
         <div style="display: flex; justify-content: space-between;">
           <span class="auth-label">Authorized Provider Signature</span>
-          <span class="auth-label" style="width: 75px; text-align: center;">Date</span>
+          <span class="auth-label" style="width: 90px; text-align: center;">Date</span>
         </div>
       </div>
 
@@ -528,12 +647,12 @@ html_content = f"""<!DOCTYPE html>
         <div class="auth-party-title">Authorized Client: Ontario Career College Network</div>
         <div>Signatory: <strong>Authorized Representative</strong> • Enrolment Operations</div>
         <div class="auth-sign-line">
-          <div class="auth-sign-field" style="color: #64748b; font-family: inherit; font-size: 8.2px; font-style: italic;">[ Accepted via Upwork Contract Offer / Sign-off ]</div>
+          <div class="auth-sign-field" style="color: #64748b; font-family: inherit; font-size: 8px; font-style: italic;">[ Accepted via Upwork Contract Offer / Sign-off ]</div>
           <div class="auth-date-field">___ / ___ / 2026</div>
         </div>
         <div style="display: flex; justify-content: space-between;">
           <span class="auth-label">Authorized Client Signature</span>
-          <span class="auth-label" style="width: 75px; text-align: center;">Date</span>
+          <span class="auth-label" style="width: 90px; text-align: center;">Date</span>
         </div>
       </div>
     </div>

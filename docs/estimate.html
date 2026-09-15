@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Production Scope & Formal Estimate - Ontario Student Voice Verification</title>
+  <title>Production Scope & Formal Estimate - Autonomous Ontario Career College Voice Verification Pipeline</title>
   <style>
     @page {
       size: letter portrait;
@@ -24,7 +24,7 @@
       font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       color: #0f172a;
       line-height: 1.32;
-      font-size: 9.6px;
+      font-size: 9.4px;
     }
 
     .page-container {
@@ -33,6 +33,7 @@
       justify-content: space-between;
       height: 100%;
       box-sizing: border-box;
+      gap: 6px;
     }
 
     /* 1. Executive Header */
@@ -42,309 +43,398 @@
       align-items: center;
       gap: 12px;
       border-bottom: 2px solid #4f46e5;
-      padding-bottom: 7px;
+      padding-bottom: 6px;
     }
-    .brand-section {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .brand-logo {
-      width: 36px;
-      height: 36px;
-      object-fit: contain;
-      border-radius: 6px;
+    .header-left {
+      flex: 1;
+      min-width: 0;
     }
     .brand-title {
-      font-size: 15px;
+      font-size: 8.5px;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #4f46e5;
+      margin-bottom: 2px;
+      white-space: nowrap;
+    }
+    h1 {
+      font-size: 14px;
       font-weight: 800;
       color: #0f172a;
-      letter-spacing: -0.3px;
+      margin: 0 0 2px 0;
+      letter-spacing: -0.02em;
+      line-height: 1.18;
+      white-space: nowrap;
     }
-    .brand-subtitle {
-      font-size: 8.8px;
+    .subtitle {
+      font-size: 8.6px;
       color: #475569;
-      margin-top: 1px;
+      margin: 0;
+      line-height: 1.25;
+      white-space: nowrap;
     }
-    .meta-box {
+    .meta-card {
+      flex-shrink: 0;
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 5px 10px;
+      font-size: 8.3px;
       text-align: right;
-      font-size: 8.2px;
-      color: #334155;
+      line-height: 1.36;
+      white-space: nowrap;
     }
-    .meta-box strong {
+    .meta-card strong {
       color: #0f172a;
     }
-    .demo-pill {
+    .live-badge {
       display: inline-block;
-      background: #eef2ff;
-      border: 1px solid #c7d2fe;
-      color: #4338ca;
-      font-size: 8px;
+      background: #ecfdf5;
+      color: #059669;
+      border: 1px solid #a7f3d0;
       font-weight: 700;
-      padding: 2px 7px;
+      padding: 1px 5px;
       border-radius: 9999px;
-      margin-top: 3px;
-      text-decoration: none;
+      font-size: 8px;
+      text-transform: uppercase;
+      margin-left: 3px;
     }
 
     /* 2. Scope & Milestones Table */
-    .section-title {
-      font-size: 9.8px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      color: #1e293b;
-      margin-bottom: 4px;
+    .scope-block {
+      margin-top: 0;
+    }
+    .section-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      margin-bottom: 3.5px;
     }
-    table.scope-table {
+    .section-title {
+      font-size: 9.6px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #1e293b;
+      border-left: 3px solid #4f46e5;
+      padding-left: 6px;
+      margin: 0;
+    }
+    .section-meta {
+      font-size: 8.2px;
+      color: #64748b;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+    table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 8.6px;
-      table-layout: fixed;
     }
-    table.scope-table th {
+    th {
       background: #f1f5f9;
       color: #334155;
-      text-align: left;
       font-weight: 700;
-      padding: 4px 6px;
-      border-top: 1px solid #cbd5e1;
-      border-bottom: 1px solid #cbd5e1;
+      text-transform: uppercase;
+      font-size: 8.2px;
+      letter-spacing: 0.04em;
+      border: 1px solid #cbd5e1;
+      padding: 3.8px 6px;
+      text-align: left;
     }
-    table.scope-table td {
-      padding: 4px 6px;
-      border-bottom: 1px solid #e2e8f0;
+    td {
+      border: 1px solid #e2e8f0;
+      padding: 3.8px 6px;
+      font-size: 8.5px;
       vertical-align: top;
     }
-    table.scope-table tr:nth-child(even) {
+    .phase-num {
+      font-weight: 800;
+      color: #1e293b;
+      font-size: 8.5px;
+      white-space: nowrap;
+    }
+    .phase-name {
+      font-weight: 700;
+      color: #0f172a;
+      font-size: 8.8px;
+    }
+    .phase-desc {
+      color: #475569;
+      font-size: 7.9px;
+      margin-top: 1px;
+      line-height: 1.22;
+    }
+    .phase-0-row {
+      background: #f0fdf4;
+    }
+    .phase-0-badge {
+      color: #15803d;
+      font-weight: 800;
+    }
+    .total-row {
+      background: #0f172a;
+      color: #ffffff;
+      font-weight: 800;
+      border: 1px solid #0f172a;
+    }
+    .total-row td {
+      border: 1px solid #0f172a;
+      padding: 4.2px 6px;
+      font-size: 8.8px;
+    }
+
+    /* 3. 2-Column Technical & Financial Breakdown */
+    .grid-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 7px;
+    }
+    .card-box {
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
       background: #f8fafc;
+      padding: 5px 9px;
+    }
+    .card-box-title {
+      font-size: 8.4px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #1e293b;
+      margin: 0 0 3px 0;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 2px;
+    }
+    .milestone-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 6px;
+      border-bottom: 1px dotted #cbd5e1;
+      padding: 2px 0;
+      font-size: 7.8px;
+    }
+    .milestone-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
     }
     .milestone-name {
-      font-weight: 700;
+      color: #334155;
+    }
+    .milestone-val {
+      font-weight: 800;
       color: #0f172a;
+      font-family: ui-monospace, monospace;
+      white-space: nowrap;
     }
-    .milestone-desc {
-      color: #475569;
-      font-size: 8px;
-      line-height: 1.25;
-      margin-top: 1px;
+    .guardrail-item {
+      font-size: 7.8px;
+      color: #334155;
+      margin-bottom: 2px;
+      padding-left: 10px;
+      position: relative;
+      line-height: 1.22;
     }
-    .price-col {
-      text-align: right;
-      font-weight: 700;
-      color: #0f172a;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    .guardrail-item:last-child {
+      margin-bottom: 0;
     }
-    .status-live {
-      display: inline-block;
-      background: #ecfdf5;
-      color: #047857;
-      border: 1px solid #a7f3d0;
-      border-radius: 4px;
-      padding: 1px 4px;
-      font-weight: 700;
+    .guardrail-item::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #16a34a;
+      font-weight: 800;
       font-size: 7.5px;
     }
 
-    /* 3. Financial Summary & Architecture Stack */
-    .summary-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 10px;
-    }
-    .tech-card {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
+    /* 4. Commercial Terms Section */
+    .terms-box {
+      border: 1px solid #cbd5e1;
       border-radius: 6px;
-      padding: 6px 9px;
-      font-size: 8.2px;
+      background: #ffffff;
+      padding: 5px 9px;
     }
-    .tech-card-title {
-      font-weight: 700;
-      color: #334155;
-      text-transform: uppercase;
-      font-size: 8px;
-      margin-bottom: 4px;
-      letter-spacing: 0.3px;
-    }
-    .tech-list {
+    .terms-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3px 8px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+    }
+    .term-col {
+      font-size: 7.8px;
+      line-height: 1.22;
+    }
+    .term-title {
+      font-weight: 800;
+      color: #4f46e5;
+      text-transform: uppercase;
+      font-size: 7.7px;
+      margin-bottom: 1px;
+    }
+    .term-body {
       color: #475569;
     }
-    .total-card {
-      background: #eef2ff;
-      border: 1px solid #c7d2fe;
-      border-radius: 6px;
-      padding: 6px 10px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    .total-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-    }
-    .total-label {
-      font-size: 9.5px;
-      font-weight: 700;
-      color: #1e1b4b;
-    }
-    .total-amount {
-      font-size: 16px;
-      font-weight: 900;
-      color: #4338ca;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-    }
-    .total-sub {
-      font-size: 7.8px;
-      color: #4338ca;
-      line-height: 1.2;
-    }
 
-    /* 4. Production SLAs & Guarantees */
-    .sla-section {
-      background: #faf5ff;
-      border: 1px solid #e9d5ff;
+    /* 5. Formal Acceptance Authorization Block */
+    .auth-block {
+      border: 1px solid #94a3b8;
       border-radius: 6px;
-      padding: 5px 9px;
-      font-size: 8px;
-      color: #581c87;
+      background: #f8fafc;
+      padding: 6px 11px;
+    }
+    .auth-title {
+      font-size: 8.4px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #0f172a;
+      margin-bottom: 3.5px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 12px;
-    }
-    .sla-item strong {
-      color: #3b0764;
-    }
-
-    /* 5. Authorization & Acceptance */
-    .auth-section {
-      border: 1px solid #cbd5e1;
-      background: #ffffff;
-      border-radius: 6px;
-      padding: 6px 10px;
-    }
-    .auth-header {
-      display: flex;
-      justify-content: space-between;
-      font-size: 8px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.4px;
-      color: #334155;
-      border-bottom: 1px solid #e2e8f0;
-      padding-bottom: 3px;
-      margin-bottom: 5px;
+      border-bottom: 1px solid #cbd5e1;
+      padding-bottom: 2px;
     }
     .auth-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 14px;
-      font-size: 8px;
     }
     .auth-party {
       display: flex;
       flex-direction: column;
       gap: 2px;
+      font-size: 7.9px;
     }
     .auth-party-title {
       font-weight: 700;
-      color: #0f172a;
+      color: #334155;
+      text-transform: uppercase;
+      font-size: 7.8px;
+      margin-bottom: 1px;
     }
     .auth-sign-line {
       display: flex;
-      justify-content: space-between;
       align-items: flex-end;
-      margin-top: 4px;
-      gap: 6px;
+      gap: 8px;
+      margin-top: 3px;
     }
     .auth-sign-field {
-      border-bottom: 1px solid #94a3b8;
-      height: 16px;
       flex: 1;
-      font-family: 'Brush Script MT', cursive, sans-serif;
-      font-size: 13px;
-      color: #1e293b;
-      line-height: 16px;
+      border-bottom: 1.2px solid #475569;
+      min-height: 22px;
+      display: flex;
+      align-items: flex-end;
+      font-family: "Brush Script MT", "Caveat", cursive, sans-serif;
+      font-size: 14px;
+      color: #1e3a8a;
       padding-left: 4px;
+      padding-bottom: 1px;
     }
     .auth-date-field {
-      border-bottom: 1px solid #94a3b8;
-      height: 16px;
-      width: 75px;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      width: 90px;
+      border-bottom: 1.2px solid #475569;
+      min-height: 22px;
+      font-family: ui-monospace, monospace;
       font-size: 8px;
+      color: #334155;
       text-align: center;
-      line-height: 16px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 1px;
+      white-space: nowrap;
     }
     .auth-label {
       font-size: 7px;
       color: #64748b;
       text-transform: uppercase;
+      margin-top: 1.5px;
     }
 
     /* 6. Executive Signature Footer */
     .footer-container {
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      background: #f8fafc;
+      padding: 5px 11px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 12px;
-      border-top: 1px solid #e2e8f0;
-      padding-top: 5px;
     }
     .footer-founder {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 9px;
+      flex: 1;
+      min-width: 0;
     }
     .founder-avatar {
-      width: 32px;
-      height: 32px;
-      border-radius: 9999px;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
       object-fit: cover;
       border: 1.5px solid #4f46e5;
+      flex-shrink: 0;
     }
     .founder-info {
-      font-size: 8.2px;
-      line-height: 1.25;
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      min-width: 0;
     }
     .founder-name {
-      font-weight: 700;
+      font-size: 8.8px;
       color: #0f172a;
+      line-height: 1.18;
+      white-space: nowrap;
+    }
+    .founder-name strong {
+      color: #0f172a;
+      font-weight: 800;
     }
     .founder-company {
-      color: #475569;
+      font-size: 8px;
+      color: #334155;
+      line-height: 1.18;
+      white-space: nowrap;
+    }
+    .founder-company strong {
+      color: #1e293b;
+      font-weight: 700;
     }
     .founder-sub {
-      font-size: 7.4px;
-      color: #64748b;
+      font-size: 7.5px;
+      color: #475569;
+      line-height: 1.18;
+      white-space: nowrap;
     }
     .footer-brand {
       display: flex;
-      align-items: center;
-      gap: 8px;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 2.5px;
+      flex-shrink: 0;
     }
     .business-logo {
-      width: 22px;
-      height: 22px;
+      height: 17px;
+      width: auto;
       object-fit: contain;
     }
     .demo-badge {
-      background: #0f172a;
-      color: #ffffff;
-      font-weight: 700;
       font-size: 7.6px;
-      padding: 3px 8px;
-      border-radius: 4px;
+      color: #4338ca;
+      background: #eef2ff;
+      border: 1px solid #c7d2fe;
+      padding: 1.5px 6px;
+      border-radius: 3px;
+      font-weight: 700;
+      font-family: ui-monospace, monospace;
       text-decoration: none;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      white-space: nowrap;
     }
   </style>
 </head>
@@ -353,143 +443,172 @@
 
   <!-- 1. Executive Header -->
   <div class="header">
-    <div class="brand-section">
-      <img src="data:image/png;base64,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" alt="BarakahSoft" class="brand-logo" />
-      <div>
-        <div class="brand-title">BarakahSoft LLC • Production Scope &amp; Formal Estimate</div>
-        <div class="brand-subtitle">Autonomous Outbound Voice Verification &amp; Enrolment System for Ontario Career Colleges</div>
-      </div>
+    <div class="header-left">
+      <div class="brand-title">BarakahSoft LLC • Systems Architecture • Ref #BS-2026-ONT-VOICE</div>
+      <h1>Autonomous Ontario Career College Voice Verification Pipeline</h1>
+      <p class="subtitle">Vapi Voice Platform • Twilio Elastic SIP (Toronto POP) • CRTC 2014-155 Hours Lock • Airtable &amp; n8n Sync</p>
     </div>
-    <div class="meta-box">
-      <div><strong>Date:</strong> 15 Sep 2026 • <strong>Doc ID:</strong> EST-ONT-2026-01</div>
-      <div><strong>Engagement:</strong> Turnkey Implementation • <strong>Timeline:</strong> 10–12 Days</div>
-      <a href="https://ontario-student-voice.vercel.app" target="_blank" class="demo-pill">Live Demo: ontario-student-voice.vercel.app</a>
+    <div class="meta-card">
+      <div><strong>Client:</strong> Ontario Career College Enrolment Operations</div>
+      <div><strong>Timeline:</strong> 10–12 Business Days (5 Production Milestones)</div>
+      <div><strong>Turnkey Package:</strong> <strong>$1,500.00 Fixed USD</strong></div>
+      <div><strong>Live Prototype:</strong> <span class="live-badge">Verified &amp; Operational</span></div>
     </div>
   </div>
 
-  <!-- 2. Scope & Milestones Table -->
-  <div>
-    <div class="section-title">
-      <span>Turnkey Milestone Roadmap &amp; Deliverables</span>
-      <span style="font-size: 8px; font-weight: normal; color: #64748b;">Fixed-Price Comprehensive Package</span>
+  <!-- 2. Scope Table -->
+  <div class="scope-block">
+    <div class="section-header">
+      <h2 class="section-title">Production Scope &amp; Milestone Delivery Schedule</h2>
+      <div class="section-meta">Live Cockpit: https://ontario-student-voice.vercel.app</div>
     </div>
-    <table class="scope-table">
+
+    <table>
       <thead>
         <tr>
-          <th style="width: 17%;">Milestone</th>
-          <th style="width: 59%;">Technical Scope &amp; Deliverables</th>
-          <th style="width: 12%;">Duration</th>
-          <th style="width: 12%; text-align: right;">Amount</th>
+          <th style="width: 12%;">Milestone</th>
+          <th style="width: 58%;">Architecture &amp; Production Engineering Deliverables</th>
+          <th style="width: 10%; text-align: center;">Timeline</th>
+          <th style="width: 8%; text-align: center;">Share</th>
+          <th style="width: 12%; text-align: right;">Investment</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr class="phase-0-row">
+          <td class="phase-num"><span class="phase-0-badge">Phase 0</span></td>
           <td>
-            <div class="milestone-name">Phase 0: Prototype</div>
-            <span class="status-live">DELIVERED &amp; LIVE</span>
+            <div class="phase-name">Interactive Architecture Prototype &amp; Outbound State Simulator (Live)</div>
+            <div class="phase-desc">Working 7-stage voice flow with mandatory AI disclosure, tuition expectation filter, dual-provider OpenAI/Gemini failover, America/Toronto business hours lock, SHA-256 consent generator, and Airtable queue. Built upfront to de-risk delivery.</div>
           </td>
-          <td>
-            <div class="milestone-desc"><strong>Live Architectural Proof-of-Concept:</strong> Interactive 7-stage voice simulator, dual-provider OpenAI/Gemini failover, America/Toronto business hours lock, SHA-256 verbal consent generator, and Airtable queue.</div>
-          </td>
-          <td>Delivered</td>
-          <td class="price-col" style="color: #059669;">$0.00</td>
+          <td style="text-align: center; font-weight: 700; white-space: nowrap;">Live Now</td>
+          <td style="text-align: center; color: #16a34a; font-weight: 700;">Included</td>
+          <td style="text-align: right; font-weight: 800; color: #16a34a;">$0.00 (Live)</td>
         </tr>
         <tr>
+          <td class="phase-num">Milestone 1</td>
           <td>
-            <div class="milestone-name">Milestone 1</div>
-            <div class="milestone-desc">Voice Agent Core</div>
+            <div class="phase-name">Vapi Voice Agent Core &amp; CRTC 7-Stage State Machine</div>
+            <div class="phase-desc">Production Vapi agent with Deepgram Nova-2 STT &amp; Cartesia Sonic Canadian voice; opening 5-second AI disclosure, 2-party recording notice, identity verification, tuition expectation filter, and timestamped verbal consent logging.</div>
           </td>
-          <td>
-            <div class="milestone-desc"><strong>Production Vapi Outbound Agent &amp; State Machine:</strong> Deepgram Nova-2 + Cartesia Canadian voice; mandatory 5-second AI disclosure, 2-party recording consent, identity verification, program/city checks, tuition expectation filter, and timestamped verbal consent capture.</div>
-          </td>
-          <td>3 Days</td>
-          <td class="price-col">$400.00</td>
+          <td style="text-align: center; font-weight: 600;">3 Days</td>
+          <td style="text-align: center; font-weight: 700; color: #4f46e5;">27%</td>
+          <td style="text-align: right; font-weight: 700;">$400.00</td>
         </tr>
         <tr>
+          <td class="phase-num">Milestone 2</td>
           <td>
-            <div class="milestone-name">Milestone 2</div>
-            <div class="milestone-desc">Batch Campaign Dialer</div>
+            <div class="phase-name">Batch Campaign Dialer, Concurrency Engine &amp; Ontario Hours Lock</div>
+            <div class="phase-desc">Airtable batch query runner with concurrency throttling (1–50 lines), automated busy/unanswered retry logic (3 attempts), real-time America/Toronto calling hours gate (Mon–Fri 9am–8pm, Sat 9am–5pm EST), and National DNCL scrubbing.</div>
           </td>
-          <td>
-            <div class="milestone-desc"><strong>Dialing Engine &amp; CRTC Calling Window Lock:</strong> Concurrency throttling (1–50 lines), automated busy/unanswered retry cadence, real-time Ontario hours lock (Mon–Fri 9am–8pm, Sat 9am–5pm EST, Sunday dial block), and National DNCL scrubbing.</div>
-          </td>
-          <td>2 Days</td>
-          <td class="price-col">$300.00</td>
+          <td style="text-align: center; font-weight: 600;">2 Days</td>
+          <td style="text-align: center; font-weight: 700; color: #4f46e5;">20%</td>
+          <td style="text-align: right; font-weight: 700;">$300.00</td>
         </tr>
         <tr>
+          <td class="phase-num">Milestone 3</td>
           <td>
-            <div class="milestone-name">Milestone 3</div>
-            <div class="milestone-desc">Airtable &amp; n8n Sync</div>
+            <div class="phase-name">n8n Middleware &amp; Bi-Directional Airtable Synchronization</div>
+            <div class="phase-desc">Self-hosted n8n webhook workflow consuming Vapi <code>call.ended</code> payloads; writes 14 typed fields (status, timeframe, tuition consent, SHA-256 hash, call recording URL) back to Airtable with zero raw transcript dumping.</div>
           </td>
-          <td>
-            <div class="milestone-desc"><strong>Bi-Directional Middleware &amp; Structured Extraction:</strong> Self-hosted n8n webhook consuming Vapi <code>call.ended</code> payloads; writes 14 typed fields to Airtable (status, timeframe, tuition consent, SHA-256 hash) with 0 raw transcript dumps.</div>
-          </td>
-          <td>2 Days</td>
-          <td class="price-col">$350.00</td>
+          <td style="text-align: center; font-weight: 600;">2 Days</td>
+          <td style="text-align: center; font-weight: 700; color: #4f46e5;">23%</td>
+          <td style="text-align: right; font-weight: 700;">$350.00</td>
         </tr>
         <tr>
+          <td class="phase-num">Milestone 4</td>
           <td>
-            <div class="milestone-name">Milestone 4</div>
-            <div class="milestone-desc">Transfers &amp; Recordings</div>
+            <div class="phase-name">Warm Transfer, Calendar Callback &amp; Audio Storage Pipeline</div>
+            <div class="phase-desc">SIP REFER warm transfer bridging confirmed prospects directly to human admissions staff; Cal.com callback booking fallback; dual-channel MP3 recordings and timestamped transcripts linked to Airtable record IDs.</div>
           </td>
-          <td>
-            <div class="milestone-desc"><strong>Warm Transfer, Calendar Booking &amp; Audio Storage:</strong> SIP REFER transfer bridging confirmed prospects to human admissions lines; Cal.com callback booking fallback; dual-channel MP3 recordings and timestamped transcripts linked to Airtable records.</div>
-          </td>
-          <td>2 Days</td>
-          <td class="price-col">$250.00</td>
+          <td style="text-align: center; font-weight: 600;">2 Days</td>
+          <td style="text-align: center; font-weight: 700; color: #4f46e5;">17%</td>
+          <td style="text-align: right; font-weight: 700;">$250.00</td>
         </tr>
         <tr>
+          <td class="phase-num">Milestone 5</td>
           <td>
-            <div class="milestone-name">Milestone 5</div>
-            <div class="milestone-desc">DNC, QA &amp; Handover</div>
+            <div class="phase-name">Permanent DNC Enforcement, Live Carrier QA &amp; 60-Min Handover</div>
+            <div class="phase-desc">Cross-campaign permanent opt-out enforcement; 50-call live carrier staging QA run; full operations &amp; prompt tuning documentation; 60-minute recorded video handover call with admissions leadership.</div>
           </td>
-          <td>
-            <div class="milestone-desc"><strong>Permanent DNC Blocklist, Carrier QA &amp; Handover:</strong> Cross-campaign opt-out enforcement; 50-call live carrier test run; full operational documentation &amp; prompt tuning guide; 60-minute recorded video handover call with admissions staff.</div>
-          </td>
-          <td>2 Days</td>
-          <td class="price-col">$200.00</td>
+          <td style="text-align: center; font-weight: 600;">2 Days</td>
+          <td style="text-align: center; font-weight: 700; color: #4f46e5;">13%</td>
+          <td style="text-align: right; font-weight: 700;">$200.00</td>
+        </tr>
+        <tr class="total-row">
+          <td colspan="2" style="font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;">Total Turnkey Production Scope (All 8 Brief Deliverables Included)</td>
+          <td style="text-align: center; font-weight: 800;">10–12 Days</td>
+          <td style="text-align: center; font-weight: 800;">100%</td>
+          <td style="text-align: right; font-weight: 800; font-family: ui-monospace, monospace; font-size: 10px;">$1,500.00</td>
         </tr>
       </tbody>
     </table>
   </div>
 
-  <!-- 3. Financial Summary & Architecture Stack -->
-  <div class="summary-grid">
-    <div class="tech-card">
-      <div class="tech-card-title">Production Telephony &amp; Compliance Specifications</div>
-      <div class="tech-list">
-        <div>• <strong>Voice AI:</strong> Vapi Orchestrator (&lt;400ms)</div>
-        <div>• <strong>Telephony:</strong> Twilio SIP (Toronto POP)</div>
-        <div>• <strong>STT Model:</strong> Deepgram Nova-2 Telephony</div>
-        <div>• <strong>TTS Model:</strong> Cartesia Sonic Canadian</div>
-        <div>• <strong>LLM Primary:</strong> OpenAI gpt-4o-mini</div>
-        <div>• <strong>LLM Failover:</strong> Gemini 2.0 Flash (&lt;200ms)</div>
-        <div>• <strong>Middleware:</strong> n8n VPS Webhook Ingestion</div>
-        <div>• <strong>Compliance:</strong> CRTC 2014-155 &amp; PIPEDA</div>
+  <!-- 3. 2-Column Technical & Financial Breakdown -->
+  <div class="grid-2col">
+    <div class="card-box">
+      <div class="card-box-title">Milestone Escrow &amp; Release Schedule</div>
+      <div class="milestone-item">
+        <span class="milestone-name">Phase 0: Interactive Architectural Prototype (Live)</span>
+        <span class="milestone-val" style="color: #16a34a;">$0.00 (Delivered)</span>
+      </div>
+      <div class="milestone-item">
+        <span class="milestone-name">M1: Vapi Voice Agent &amp; 7-Stage State Machine</span>
+        <span class="milestone-val">$400.00 (Net 3 Days)</span>
+      </div>
+      <div class="milestone-item">
+        <span class="milestone-name">M2: Batch Campaign Dialer &amp; Ontario Hours Lock</span>
+        <span class="milestone-val">$300.00 (Net 5 Days)</span>
+      </div>
+      <div class="milestone-item">
+        <span class="milestone-name">M3: n8n Middleware &amp; 14-Field Airtable Sync</span>
+        <span class="milestone-val">$350.00 (Net 7 Days)</span>
+      </div>
+      <div class="milestone-item">
+        <span class="milestone-name">M4: Warm Transfer, Calendar Booking &amp; Audio S3</span>
+        <span class="milestone-val">$250.00 (Net 9 Days)</span>
+      </div>
+      <div class="milestone-item">
+        <span class="milestone-name">M5: Permanent DNC, Staging QA &amp; 60-Min Handover</span>
+        <span class="milestone-val">$200.00 (Net 11 Days)</span>
       </div>
     </div>
 
-    <div class="total-card">
-      <div class="total-row">
-        <span class="total-label">Total Turnkey Investment:</span>
-        <span class="total-amount">$1,500.00</span>
+    <div class="card-box">
+      <div class="card-box-title">Production Telephony &amp; Compliance Guardrails</div>
+      <div class="guardrail-item"><strong>PSTN Carrier:</strong> Twilio Elastic SIP trunk terminating at Toronto POP (&lt;400ms latency)</div>
+      <div class="guardrail-item"><strong>Voice Stack:</strong> Deepgram Nova-2 telephony STT + Cartesia Sonic Canadian voice persona</div>
+      <div class="guardrail-item"><strong>Dual AI Engine:</strong> OpenAI gpt-4o-mini primary with automatic Gemini 2.0 Flash failover</div>
+      <div class="guardrail-item"><strong>CRTC 2014-155:</strong> Hardware/software locked to Mon–Fri 9am–8pm &amp; Sat 9am–5pm EST</div>
+      <div class="guardrail-item"><strong>PIPEDA Consent:</strong> SHA-256 tamper-evident verbal consent hash logged per student</div>
+    </div>
+  </div>
+
+  <!-- 4. Commercial Terms Section -->
+  <div class="terms-box">
+    <div class="terms-grid">
+      <div class="term-col">
+        <div class="term-title">Fixed-Price Guarantee</div>
+        <div class="term-body">100% milestone-based fixed investment ($1,500.00). Zero hidden fees, zero vendor markups, zero scope creep.</div>
       </div>
-      <div class="total-sub">
-        <strong>100% Fixed-Price Guarantee.</strong> Zero hidden fees, zero vendor markups. Wholesale telephony (~$0.05 CAD/min) billed directly by Twilio &amp; Vapi to your existing accounts.
+      <div class="term-col">
+        <div class="term-title">30-Day Bug Warranty</div>
+        <div class="term-body">Full post-deployment coverage for prompt fine-tuning, webhook sync edge cases, and carrier error handling at $0 extra.</div>
+      </div>
+      <div class="term-col">
+        <div class="term-title">100% Code Ownership</div>
+        <div class="term-body">All n8n workflows, Vapi prompts, and Twilio configs reside 100% in your existing private accounts with no lock-in.</div>
+      </div>
+      <div class="term-col">
+        <div class="term-title">Handover &amp; Training</div>
+        <div class="term-body">60-minute recorded video walkthrough + step-by-step SOP so your team independently runs and tunes the agent.</div>
       </div>
     </div>
   </div>
 
-  <!-- 4. Production SLAs & Guarantees -->
-  <div class="sla-section">
-    <div class="sla-item">• <strong>30-Day Bug Warranty:</strong> Zero-cost bug fixes &amp; prompt tuning</div>
-    <div class="sla-item">• <strong>Zero Vendor Lock-in:</strong> 100% code, prompt, &amp; workflow ownership</div>
-    <div class="sla-item">• <strong>60-Min Handover:</strong> Full walkthrough so your team operates independently</div>
-  </div>
-
-  <!-- 5. Formal Authorization & Engagement Acceptance -->
-  <div class="auth-section">
-    <div class="auth-header">
+  <!-- 5. Formal Acceptance Authorization Block -->
+  <div class="auth-block">
+    <div class="auth-title">
       <span>Formal Authorization &amp; Engagement Acceptance</span>
       <span style="font-weight: 500; font-size: 7.4px; color: #475569;">Binding upon signature by authorized representatives</span>
     </div>
@@ -503,7 +622,7 @@
         </div>
         <div style="display: flex; justify-content: space-between;">
           <span class="auth-label">Authorized Provider Signature</span>
-          <span class="auth-label" style="width: 75px; text-align: center;">Date</span>
+          <span class="auth-label" style="width: 90px; text-align: center;">Date</span>
         </div>
       </div>
 
@@ -511,12 +630,12 @@
         <div class="auth-party-title">Authorized Client: Ontario Career College Network</div>
         <div>Signatory: <strong>Authorized Representative</strong> • Enrolment Operations</div>
         <div class="auth-sign-line">
-          <div class="auth-sign-field" style="color: #64748b; font-family: inherit; font-size: 8.2px; font-style: italic;">[ Accepted via Upwork Contract Offer / Sign-off ]</div>
+          <div class="auth-sign-field" style="color: #64748b; font-family: inherit; font-size: 8px; font-style: italic;">[ Accepted via Upwork Contract Offer / Sign-off ]</div>
           <div class="auth-date-field">___ / ___ / 2026</div>
         </div>
         <div style="display: flex; justify-content: space-between;">
           <span class="auth-label">Authorized Client Signature</span>
-          <span class="auth-label" style="width: 75px; text-align: center;">Date</span>
+          <span class="auth-label" style="width: 90px; text-align: center;">Date</span>
         </div>
       </div>
     </div>

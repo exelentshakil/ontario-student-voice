@@ -50,6 +50,7 @@ export function LiveCallSimulator({
   const [isSpeaking, setIsSpeaking] = useState<boolean>(false);
 
   const transcriptEndRef = useRef<HTMLDivElement>(null);
+  const transcriptContainerRef = useRef<HTMLDivElement>(null);
 
   // Update selected student if parent changes
   useEffect(() => {
@@ -63,8 +64,13 @@ export function LiveCallSimulator({
   }, [selectedStudentId]);
 
   useEffect(() => {
-    transcriptEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [transcript]);
+    if (transcriptContainerRef.current) {
+      transcriptContainerRef.current.scrollTo({
+        top: transcriptContainerRef.current.scrollHeight,
+        behavior: "smooth",
+      });
+    }
+  }, [transcript, loadingAi]);
 
   // Speech synthesis helper
   const speakAgent = (text: string) => {
@@ -362,7 +368,7 @@ export function LiveCallSimulator({
           <p className="font-semibold text-[var(--color-text-primary)] truncate" title={student.originalProgramInterest}>
             {student.originalProgramInterest}
           </p>
-          <span className="inline-block rounded bg-amber-100 text-amber-800 dark:bg-amber-950/60 dark:text-amber-300 px-1.5 py-0.2 text-[10px] font-mono font-semibold">
+          <span className="inline-block rounded bg-amber-100 text-amber-800 dark:bg-amber-950/60 dark:text-amber-300 px-1.5 py-0.2 text-xs font-mono font-semibold">
             {student.staleDays} Days Stale
           </span>
         </div>
@@ -383,7 +389,7 @@ export function LiveCallSimulator({
               {student.verificationStatus}
             </span>
           </p>
-          <p className="font-mono text-[var(--color-text-muted)] text-[10px] mt-0.5">
+          <p className="font-mono text-[var(--color-text-muted)] text-xs mt-0.5">
             Attempts: {student.dialAttempts}
           </p>
         </div>
@@ -411,7 +417,7 @@ export function LiveCallSimulator({
                     {callActive ? "CALL IN PROGRESS (PSTN CONNECTED)" : "CALL DISCONNECTED"}
                   </span>
                   {callActive && (
-                    <span className="rounded bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 px-1.5 py-0.2 text-[10px] font-mono font-bold">
+                    <span className="rounded bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 px-1.5 py-0.2 text-xs font-mono font-bold">
                       STAGE: {currentStage.toUpperCase()}
                     </span>
                   )}
@@ -448,7 +454,7 @@ export function LiveCallSimulator({
           </div>
 
           {/* Transcript Scroll Area */}
-          <div className="my-4 h-72 overflow-y-auto space-y-3 pr-2">
+          <div ref={transcriptContainerRef} className="my-4 h-72 overflow-y-auto space-y-3 pr-2 scroll-smooth">
             {transcript.length === 0 ? (
               <div className="flex h-full flex-col items-center justify-center text-center text-xs text-[var(--color-text-muted)] p-6">
                 <PhoneCall className="h-8 w-8 text-[var(--color-text-muted)] opacity-40 mb-2" />
@@ -465,7 +471,7 @@ export function LiveCallSimulator({
                     key={turn.id}
                     className={`flex flex-col ${isAgent ? "items-start" : "items-end"}`}
                   >
-                    <div className="flex items-center gap-1.5 text-[10px] font-mono text-[var(--color-text-muted)] mb-1">
+                    <div className="flex items-center gap-1.5 text-xs font-mono text-[var(--color-text-muted)] mb-1">
                       <span>{isAgent ? "Sarah (AI Admissions Agent)" : student.fullName}</span>
                       <span>•</span>
                       <span>+{turn.timestampSec}s</span>
@@ -499,7 +505,7 @@ export function LiveCallSimulator({
 
           {/* Telemetry Badge Strip */}
           {lastTelemetry && (
-            <div className="mb-3 flex items-center justify-between rounded-lg bg-[var(--color-panel)] border border-[var(--color-border)] px-3 py-1.5 text-[10px] font-mono">
+            <div className="mb-3 flex items-center justify-between rounded-lg bg-[var(--color-panel)] border border-[var(--color-border)] px-3 py-1.5 text-xs font-mono">
               <span className="flex items-center gap-1 text-[var(--color-text-secondary)]">
                 <Sparkles className="h-3 w-3 text-indigo-500" />
                 Engine: <strong className="text-[var(--color-brand-primary)]">{lastTelemetry.provider}</strong> ({lastTelemetry.model})
@@ -513,14 +519,19 @@ export function LiveCallSimulator({
           {/* Quick-Reply Suggestion Chips */}
           {callActive && !loadingAi && (
             <div className="mb-3 space-y-1.5">
-              <span className="text-[10px] font-semibold uppercase tracking-wider text-[var(--color-text-muted)]">
+              <span className="text-xs font-semibold uppercase tracking-wider text-[var(--color-text-muted)]">
                 Simulated Student Responses (Click to speak):
               </span>
               <div className="flex flex-wrap gap-1.5">
                 {getStageSuggestions().map((sugg, idx) => (
                   <button
                     key={idx}
-                    onClick={() => handleSendResponse(sugg)}
+                    type="button"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      handleSendResponse(sugg);
+                    }}
                     className="rounded-full bg-[var(--color-panel)] border border-[var(--color-border)] px-3 py-1 text-xs text-[var(--color-text-primary)] hover:border-[var(--color-brand-primary)] hover:bg-[var(--color-brand-subtle)] transition-all cursor-pointer whitespace-nowrap"
                   >
                     {sugg}
@@ -576,7 +587,7 @@ export function LiveCallSimulator({
               <span className="text-xs font-bold text-[var(--color-text-primary)] uppercase tracking-wider">
                 7-Stage Call State Machine
               </span>
-              <span className="font-mono text-[10px] text-[var(--color-text-muted)]">
+              <span className="font-mono text-xs text-[var(--color-text-muted)]">
                 Vapi Rule Engine
               </span>
             </div>
@@ -624,7 +635,7 @@ export function LiveCallSimulator({
                     </div>
                     <div>
                       <p className="font-semibold leading-tight">{item.label}</p>
-                      <p className="text-[10px] text-[var(--color-text-secondary)] mt-0.5">{item.desc}</p>
+                      <p className="text-xs text-[var(--color-text-secondary)] mt-0.5">{item.desc}</p>
                     </div>
                   </div>
                 );
@@ -637,7 +648,7 @@ export function LiveCallSimulator({
             <span className="font-semibold text-[var(--color-text-primary)] block mb-1">
               Live Airtable Schema Sync
             </span>
-            <div className="space-y-1 font-mono text-[10px] text-[var(--color-text-secondary)]">
+            <div className="space-y-1 font-mono text-xs text-[var(--color-text-secondary)]">
               <div className="flex justify-between">
                 <span>Tuition Acknowledged:</span>
                 <strong className={student.verifiedDetails?.tuitionAcknowledged ? "text-emerald-600" : "text-slate-400"}>
