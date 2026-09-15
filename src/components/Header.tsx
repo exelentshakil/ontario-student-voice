@@ -14,6 +14,9 @@ import {
   Calculator,
   Flame,
   Activity,
+  Workflow,
+  Layers,
+  Radio,
 } from "lucide-react";
 import { getOntarioComplianceState } from "@/lib/compliance";
 
@@ -51,8 +54,8 @@ export function Header({
   return (
     <header className="sticky top-0 z-40 border-b border-[var(--color-border)] bg-[var(--color-panel)]/95 backdrop-blur-md">
       {/* Top Banner: Ontario CRTC Compliance Status */}
-      <div className="border-b border-[var(--color-border-subtle)] bg-[var(--color-panel-subtle)] px-4 py-1.5 text-xs text-[var(--color-text-secondary)] w-full max-w-full overflow-hidden">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-2 px-0 sm:px-2 w-full max-w-full overflow-hidden">
+      <div className="border-b border-[var(--color-border-subtle)] bg-[var(--color-panel-subtle)] py-1.5 text-xs text-[var(--color-text-secondary)] w-full">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-2 px-4 sm:px-6 lg:px-8 w-full">
           <div className="flex items-center gap-2 overflow-x-auto whitespace-nowrap py-0.5 scrollbar-none max-w-full">
             <span className="inline-flex items-center gap-1.5 font-semibold text-[var(--color-text-primary)]">
               <ShieldCheck className="h-3.5 w-3.5 text-[var(--color-accent-emerald)]" />
@@ -119,33 +122,36 @@ export function Header({
           <nav className="hidden items-center gap-1 xl:flex">
             <button
               onClick={() => setActiveSection("dashboard")}
-              className={`rounded-lg px-3 py-1.5 text-xs font-semibold whitespace-nowrap shrink-0 transition-colors cursor-pointer ${
+              className={`inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-semibold whitespace-nowrap shrink-0 transition-colors cursor-pointer ${
                 activeSection === "dashboard"
                   ? "bg-[var(--color-panel-subtle)] text-[var(--color-brand-primary)] border border-[var(--color-border)]"
                   : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-panel-subtle)]"
               }`}
             >
-              Pipeline
+              <Workflow className="h-3.5 w-3.5 shrink-0" />
+              <span>Pipeline</span>
             </button>
             <button
               onClick={() => setActiveSection("queue")}
-              className={`rounded-lg px-3 py-1.5 text-xs font-semibold whitespace-nowrap shrink-0 transition-colors cursor-pointer ${
+              className={`inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-semibold whitespace-nowrap shrink-0 transition-colors cursor-pointer ${
                 activeSection === "queue"
                   ? "bg-[var(--color-panel-subtle)] text-[var(--color-brand-primary)] border border-[var(--color-border)]"
                   : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-panel-subtle)]"
               }`}
             >
-              Queue (12)
+              <Layers className="h-3.5 w-3.5 shrink-0" />
+              <span>Queue (12)</span>
             </button>
             <button
               onClick={() => setActiveSection("call")}
-              className={`rounded-lg px-3 py-1.5 text-xs font-semibold whitespace-nowrap shrink-0 transition-colors cursor-pointer ${
+              className={`inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-semibold whitespace-nowrap shrink-0 transition-colors cursor-pointer ${
                 activeSection === "call"
                   ? "bg-[var(--color-panel-subtle)] text-[var(--color-brand-primary)] border border-[var(--color-border)]"
                   : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-panel-subtle)]"
               }`}
             >
-              Simulator
+              <Radio className="h-3.5 w-3.5 shrink-0 text-emerald-500 animate-pulse" />
+              <span>Simulator</span>
             </button>
           </nav>
 

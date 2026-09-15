@@ -27,6 +27,7 @@ import {
   ShieldCheck,
   Building2,
   Radio,
+  Workflow,
 } from "lucide-react";
 
 export default function Home() {
@@ -99,7 +100,7 @@ export default function Home() {
 
       {/* Main Content Workspace */}
       <main className="flex-1 py-6 sm:py-8 w-full max-w-full min-w-0 overflow-x-hidden">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-8 w-full max-w-full min-w-0">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-8 w-full min-w-0">
           {/* Real-time Notification Banner */}
           {batchNotice && (
             <div className="flex items-center justify-between rounded-xl border border-emerald-300 bg-emerald-50 dark:border-emerald-800 dark:bg-emerald-950/60 p-4 text-xs text-emerald-900 dark:text-emerald-200">
@@ -139,35 +140,38 @@ export default function Home() {
               <button
                 type="button"
                 onClick={() => setActiveSection("dashboard")}
-                className={`rounded-lg px-3 py-1.5 text-xs font-semibold whitespace-nowrap shrink-0 transition-all cursor-pointer ${
+                className={`inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-semibold whitespace-nowrap shrink-0 transition-all cursor-pointer ${
                   activeSection === "dashboard"
                     ? "bg-[var(--color-brand-primary)] text-white shadow-sm font-bold"
                     : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]"
                 }`}
               >
-                Pipeline
+                <Workflow className="h-3.5 w-3.5 shrink-0" />
+                <span>Pipeline</span>
               </button>
               <button
                 type="button"
                 onClick={() => setActiveSection("queue")}
-                className={`rounded-lg px-3 py-1.5 text-xs font-semibold whitespace-nowrap shrink-0 transition-all cursor-pointer ${
+                className={`inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-semibold whitespace-nowrap shrink-0 transition-all cursor-pointer ${
                   activeSection === "queue"
                     ? "bg-[var(--color-brand-primary)] text-white shadow-sm font-bold"
                     : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]"
                 }`}
               >
-                Queue ({students.length})
+                <Layers className="h-3.5 w-3.5 shrink-0" />
+                <span>Queue ({students.length})</span>
               </button>
               <button
                 type="button"
                 onClick={() => setActiveSection("call")}
-                className={`rounded-lg px-3 py-1.5 text-xs font-semibold whitespace-nowrap shrink-0 transition-all cursor-pointer ${
+                className={`inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-semibold whitespace-nowrap shrink-0 transition-all cursor-pointer ${
                   activeSection === "call"
                     ? "bg-[var(--color-brand-primary)] text-white shadow-sm font-bold"
                     : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]"
                 }`}
               >
-                Simulator
+                <Radio className="h-3.5 w-3.5 shrink-0 animate-pulse text-emerald-400" />
+                <span>Simulator</span>
               </button>
             </div>
           </div>
